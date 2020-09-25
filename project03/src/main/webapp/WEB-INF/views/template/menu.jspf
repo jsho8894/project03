@@ -35,10 +35,10 @@
           </ul>
          </li>
          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BOTTOM<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PANTS<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="${pageContext.request.contextPath }/long/">LONG</a></li>
-            <li><a href="${pageContext.request.contextPath }/short/">SHORT</a></li>
+            <li><a href="${pageContext.request.contextPath }/jean/">데님</a></li>
+            <li><a href="${pageContext.request.contextPath }/slacks/">슬랙스</a></li>
           </ul>
           </li>
           <li class="dropdown">
@@ -46,7 +46,7 @@
           <ul class="dropdown-menu">
             <li><a href="${pageContext.request.contextPath }/coat/">COAT</a></li>
             <li><a href="${pageContext.request.contextPath }/jacket/">JACKET</a></li>
-            <li><a href="${pageContext.request.contextPath }/cadigan/">CARDIGAN</a></li>
+            <li><a href="${pageContext.request.contextPath }/cardigan/">CARDIGAN</a></li>
           </ul>
         </li>
         <li><a href="${pageContext.request.contextPath }/sale">S A L E</a></li>
@@ -54,9 +54,5 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="container">
-	<div class="row" id="header">
-		<div class="col-md-12"></div>
-	</div>
-	<div class="row" id="content">
-		<div class="col-md-12">
+
+
