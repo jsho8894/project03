@@ -74,22 +74,26 @@
 <ul id = "jeans" class="row">
   <li class = "col-md-4">
   	<div class = "jeansImg" >
-  		<a href = "${pageContext.request.contextPath }/detail/"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean1.jpg"></a>
+  		<c:forEach items = "${list }" var = "bean">
+  		<div>"${bean.jnum }"</div>
+  		<a href = "${pageContext.request.contextPath }/detail/">
+  			<img src = "${pageContext.request.contextPath }/resources/jeanImgs/${bean.jname }.jpg"></a>
   	</div>
   	<div class = "jeansInfo">
   		<div class = "name">
   			<a href = "${pageContext.request.contextPath }/detail/">
-	  			<span>Waste Land</span><br/>
+	  			<span>${bean.jname }</span><br/>
   			</a>
   		</div>
   		<div class = "price">
   			<a href = "${pageContext.request.contextPath }/detail/">
-  				<span style="font-size:10px;color:#111111;">₩ 99,000</span>
+  				<span style="font-size:10px;color:#111111;">${bean.jprice }</span>
   			</a>
   		</div>
   	</div>
   </li>
-  <li class="col-md-4">
+  		</c:forEach>
+<%--   <li class="col-md-4">
   	<div class = "jeansImg" >
   		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean2.jpg"></a>
   	</div>
@@ -310,7 +314,7 @@
   		</div>
   	</div>
   </li>
-  <li class="col-md-4">
+  <li class="col-md-4"> --%>
     <div class = "jeansImg" >
   		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean15.jpg"></a>
   	</div>
