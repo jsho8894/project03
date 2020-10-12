@@ -19,7 +19,6 @@
       </button>
       <a class="navbar-brand" href="#">H O M M E</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="droplist">
       <ul class="nav navbar-nav">
@@ -34,7 +33,7 @@
             <li><a href="${pageContext.request.contextPath }/sweater/">SWEATER</a></li>
           </ul>
          </li>
-         <li class="dropdown">
+         <li id= "pantsMenu" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PANTS<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="${pageContext.request.contextPath }/jean/">데님</a></li>

@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.bit.project3" />
+	<context:component-scan base-package="com.homme" />
 	
 	
 	
