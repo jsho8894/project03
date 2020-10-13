@@ -252,10 +252,10 @@ $(".pantsSize").append("<div class = 'product_option_3'>"+
 	<!-- 클릭시 같이 밀려나게... -->
 	<button>BUY NOW</button></div>
 <ul id = "jeans" class="row">
- <c:forEach items = "${WasteLands}" var = "WasteLand" >
+ <c:forEach items = "${bean.list}" var = "bean" >
   <li class = "col-md-12">
   	<div class = "jeansImg" >
-  		<img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean1/${WasteLand}" >
+  		<img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean${bean.jnum }/${bean.jname}${bean.jnum }.jpg" >
   	</div>
   </li>
  </c:forEach>

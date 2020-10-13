@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.homme.model.HommeDao;
 
 @Controller
-@RequestMapping("/jean")
+@RequestMapping("/pants")
 public class JeanController {
 	@Autowired
 	HommeDao hommeDao;
@@ -22,7 +22,7 @@ public class JeanController {
 		return "pants/jean";
 	}
 	
-	@RequestMapping("/{jnum}")
+	@RequestMapping("/")
 	public String detail(@PathVariable int jnum, Model model) throws SQLException {
 		model.addAttribute("bean", hommeDao.selectOne(jnum));
 		return "pants/detail";

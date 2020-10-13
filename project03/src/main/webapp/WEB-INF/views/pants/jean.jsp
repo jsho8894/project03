@@ -15,11 +15,10 @@
 		img {
 			width : 350px;
 			heigth : 300px;
-	
 		}
 		
 		span {
-			font-size: 12px;
+			font-size: 13px;
 			color : #111111;
 		}
 		
@@ -72,265 +71,27 @@
 <!-- 옷 이름,가격은 db에서 받아와야 함 -->
 	<h2>&nbsp;&nbsp;Jean Page</h2>
 <ul id = "jeans" class="row">
+<c:forEach items = "${list }" var = "bean">	
   <li class = "col-md-4">
   	<div class = "jeansImg" >
-  		<c:forEach items = "${list }" var = "bean">
-  		<div>"${bean.jnum }"</div>
   		<a href = "${pageContext.request.contextPath }/detail/">
-  			<img src = "${pageContext.request.contextPath }/resources/jeanImgs/${bean.jname }.jpg"></a>
+  			<img src = "${pageContext.request.contextPath }/resources/jeanImgs/${bean.jname }.jpg">
+  		</a>
   	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
+  		<div class = "jeansInfo">
+  		  <div class = "name">
   			<a href = "${pageContext.request.contextPath }/detail/">
 	  			<span>${bean.jname }</span><br/>
-  			</a>
-  		</div>
+  			</a>	
+  		  </div>
   		<div class = "price">
-  			<a href = "${pageContext.request.contextPath }/detail/">
-  				<span style="font-size:10px;color:#111111;">${bean.jprice }</span>
+  		 	<a href = "${pageContext.request.contextPath }/detail/">
+  				<span style="font-size:12px;color:#111111;">&#8361;&nbsp;${bean.jprice }</span>
   			</a>
   		</div>
   	</div>
   </li>
-  		</c:forEach>
-<%--   <li class="col-md-4">
-  	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean2.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Pale Blue</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 99,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean3.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Cross Damage</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 99,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	 <div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean4.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Overtime</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 109,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	 	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean5.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Night Ranger</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 99,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	 	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean6.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Perfect Day</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 96,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	 	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean71.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Red Route 707</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 123,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	 	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean8.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Black Hound</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 87,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	 	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean9.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>After Glow</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 99,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean10.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  		<span>Unbreaker</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 106,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean11.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Uncanny Blue</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 107,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean12.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Stellar White</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 93,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean13.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Undercover Bartender</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 99,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4">
-  	<div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean14.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Moonlight Blue</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 106,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
-  <li class="col-md-4"> --%>
-    <div class = "jeansImg" >
-  		<a href = "#"><img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean15.jpg"></a>
-  	</div>
-  	<div class = "jeansInfo">
-  		<div class = "name">
-  			<a href = "#">
-	  			<span>Shadow Chaser</span><br/>
-  			</a>
-  		</div>
-  		<div class = "price">
-  			<a href = "#">
-  				<span style="font-size:10px;color:#111111;">₩ 98,000</span>
-  			</a>
-  		</div>
-  	</div>
-  </li>
+</c:forEach>
 </ul>
 	<%@ include file="../template/footer.jspf" %>
 </body>

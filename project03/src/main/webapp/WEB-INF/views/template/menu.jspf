@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  <div class="login">
 	<p><a href="${pageContext.request.contextPath }/login">로그인&nbsp;&nbsp;&nbsp;l</a></p>
 	<p><a href="${pageContext.request.contextPath }/join">&nbsp;&nbsp;&nbsp;회원가입</a></p>
@@ -36,8 +35,8 @@
          <li id= "pantsMenu" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PANTS<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="${pageContext.request.contextPath }/jean/">데님</a></li>
-            <li><a href="${pageContext.request.contextPath }/slacks/">슬랙스</a></li>
+            <li><a href="${pageContext.request.contextPath }/pants/">데님</a></li>
+            <li><a href="${pageContext.request.contextPath }/pants/">슬랙스</a></li>
           </ul>
           </li>
           <li class="dropdown">
