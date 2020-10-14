@@ -6,7 +6,7 @@
   <select id="selectAll" resultType="com.homme.model.entity.HommeVo">
     select * from jean order by jnum asc
   </select>
-  <select id = "selectOne" parameterType="int" resultType = "com.homme.model.entity.HommeVo">
-  	select * from jean where jnum=#{value}
+  <select id = "selectOne" parameterType="String" resultType = "com.homme.model.entity.HommeVo">
+  	select * from jean where jname=#{value}
   </select>
 </mapper>

@@ -131,7 +131,7 @@ $(".pantsSize").append("<div class = 'product_option_1'>"+
 							"<div class = 'two'>1</div>"+
 							"<div class = 'two'>+</div>"+
 							"<div class = 'two'>-</div>"+
-							"<div class = 'three'>₩99,000</div>"+
+							"<div class = 'three'>${bean.jname}</div>"+
 							"<div class = 'four_1'>x</div>"+
 						"</div><br/>");	
 				}
@@ -151,7 +151,7 @@ $(".pantsSize").append("<div class = 'product_option_2'>"+
 							"<div class = 'two'>수량</div>"+
 							"<div class = 'two'>+</div>"+
 							"<div class = 'two'>-</div>"+
-							"<div class = 'three'>₩99,000</div>"+
+							"<div class = 'three'>${bean.jname}</div>"+
 							"<div class = 'four_2'>x</div>"+
 						"</div><br/>");	
 				}
@@ -171,7 +171,7 @@ $(".pantsSize").append("<div class = 'product_option_3'>"+
 							"<div class = 'two'>수량</div>"+
 							"<div class = 'two'>+</div>"+
 							"<div class = 'two'>-</div>"+
-							"<div class = 'three'>₩99,000</div>"+
+							"<div class = 'three'>${bean.jname}</div>"+
 							"<div class = 'four_3'>x</div>"+
 						"</div><br/>");	
 				}
@@ -252,10 +252,10 @@ $(".pantsSize").append("<div class = 'product_option_3'>"+
 	<!-- 클릭시 같이 밀려나게... -->
 	<button>BUY NOW</button></div>
 <ul id = "jeans" class="row">
- <c:forEach items = "${bean.list}" var = "bean" >
+ <c:forEach items = "${detail}" var = "detail" >
   <li class = "col-md-12">
   	<div class = "jeansImg" >
-  		<img src = "${pageContext.request.contextPath }/resources/jeanImgs/jean${bean.jnum }/${bean.jname}${bean.jnum }.jpg" >
+  		<img src = "${pageContext.request.contextPath }/resources/jeanImgs/WasteLand/">
   	</div>
   </li>
  </c:forEach>

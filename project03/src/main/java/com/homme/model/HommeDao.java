@@ -7,5 +7,5 @@ import com.homme.model.entity.HommeVo;
 
 public interface HommeDao {
 	List<HommeVo> selectAll() throws SQLException;
-	HommeVo selectOne(int key) throws SQLException;
+	HommeVo selectOne(String jname) throws SQLException;
 }

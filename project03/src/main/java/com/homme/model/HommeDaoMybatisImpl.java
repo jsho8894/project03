@@ -15,8 +15,8 @@ public class HommeDaoMybatisImpl extends SqlSessionDaoSupport implements HommeDa
 	}
 	
 	@Override
-	public HommeVo selectOne(int key) throws SQLException {
-		return getSqlSession().selectOne("homme.selectOne", key);
+	public HommeVo selectOne(String jname) throws SQLException {
+		return getSqlSession().selectOne("homme.selectOne", jname);
 	}
 
 	

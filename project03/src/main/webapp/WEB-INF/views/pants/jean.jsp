@@ -74,18 +74,18 @@
 <c:forEach items = "${list }" var = "bean">	
   <li class = "col-md-4">
   	<div class = "jeansImg" >
-  		<a href = "${pageContext.request.contextPath }/detail/">
+  		<a href = "${bean.jname}">
   			<img src = "${pageContext.request.contextPath }/resources/jeanImgs/${bean.jname }.jpg">
   		</a>
   	</div>
   		<div class = "jeansInfo">
   		  <div class = "name">
-  			<a href = "${pageContext.request.contextPath }/detail/">
+  			<a href = "${bean.jname}">
 	  			<span>${bean.jname }</span><br/>
   			</a>	
   		  </div>
   		<div class = "price">
-  		 	<a href = "${pageContext.request.contextPath }/detail/">
+  		 	<a href = "${bean.jname}">
   				<span style="font-size:12px;color:#111111;">&#8361;&nbsp;${bean.jprice }</span>
   			</a>
   		</div>

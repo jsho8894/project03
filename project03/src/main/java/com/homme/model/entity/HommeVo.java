@@ -1,23 +1,20 @@
 package com.homme.model.entity;
 
-import java.sql.Timestamp;
-
 public class HommeVo {
 	private int jnum;
 	private String jname;
 	private int jprice;
-	private Timestamp nalja;
-	
-	public HommeVo() {}
 
-	public HommeVo(int jnum, String jname, int jprice, Timestamp nalja) {
+	public HommeVo() {
+	}
+
+	public HommeVo(int jnum, String jname, int jprice, String jarray) {
 		super();
 		this.jnum = jnum;
 		this.jname = jname;
 		this.jprice = jprice;
-		this.nalja = nalja;
 	}
-
+	
 	public int getJnum() {
 		return jnum;
 	}
@@ -41,14 +38,7 @@ public class HommeVo {
 	public void setJprice(int jprice) {
 		this.jprice = jprice;
 	}
-
-	public Timestamp getNalja() {
-		return nalja;
-	}
-
-	public void setNalja(Timestamp nalja) {
-		this.nalja = nalja;
-	}
+	
 
 	@Override
 	public int hashCode() {
@@ -59,7 +49,6 @@ public class HommeVo {
 		result = prime * result + jprice;
 		return result;
 	}
-	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -84,8 +73,7 @@ public class HommeVo {
 
 	@Override
 	public String toString() {
-		return "HommeVo [jnum=" + jnum + ", jname=" + jname + ", jprice=" + jprice + ", nalja=" + nalja + "]";
+		return "HommeVo [jnum=" + jnum + ", jname=" + jname + ", jprice=" + jprice + ", jarray=" + "]";
 	}
-	
-	
+
 }
