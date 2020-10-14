@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bit.project3.model.CustomerDao">
+	<insert id="register" parameterType="com.bit.project3.model.entity.CustomerVo">
+		insert into user(user_name,user_id, user_password,user_contact,user_addr,user_email) values(#{user_name},#{user_id},#{user_password},#{user_contact},#{user_addr},#{user_email})
+	</insert>
+	
+	<select id="login" parameterType="com.bit.project3.model.entity.CustomerVo" resultType="com.bit.project3.model.entity.CustomerVo">
+		select * from user where user_id =#{user_id} and user_password=#{user_password}
+	</select>
+
+</mapper>

@@ -1,11 +1,33 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Home</title>
-	<%@ include file="template/header.jspf" %>
+<%@ include file="template/header.jspf" %>
+		<style type="text/css">
+		.login {
+			text-align: right;
+			}
+		.login > p{
+			display: inline-block;
+			direction: none;
+		}
+		.login > p > a{
+			color: black;
+		}
+		.login > p > a:hover {
+			text-decoration: none;
+			color: black;
+		}
+		.item > img {
+			margin: 0px auto;
+		}
+		.item > img{
+			height: 650px;
+			width: 335px;
+		}
+	</style>
 </head>
 <body>
 <%@ include file="template/menu.jspf" %>
