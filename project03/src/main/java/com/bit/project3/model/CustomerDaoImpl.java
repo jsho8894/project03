@@ -1,6 +1,7 @@
 package com.bit.project3.model;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -26,6 +27,19 @@ public class CustomerDaoImpl implements CustomerDao {
 		CustomerDao dao=sqlsession.getMapper(CustomerDao.class);
 		dao.login(cusvo);
 		return cusvo;
+	}
+
+
+	@Override
+	public List<CustomerVo> selectAll() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public CustomerVo managerlogin(CustomerVo cusvo) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

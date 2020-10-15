@@ -3,8 +3,14 @@
     
 <form name='homeForm' method="post" action="/login">
 			<div class="login">
-				<c:if test="${customer != null}">
+				<c:if test="${customer != null&&customer.user_level==2}">
 					<p>${customer.user_name }님 로그인 중</p><br/>
+				<p><a href="./mypage">마이페이지</a></p>
+				<p><a href="./logout">로그아웃</a></p>
+				</c:if>
+				<c:if test="${customer != null&&customer.user_level==1}">
+					<p>${customer.user_name }님 로그인 중</p><br/>
+				<p><a href="./manager/">관리자 페이지</a></p>
 				<p><a href="./logout">로그아웃</a></p>
 				</c:if>
 				<c:if test="${customer == null}">

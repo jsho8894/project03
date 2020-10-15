@@ -10,5 +10,8 @@
 	<select id="login" parameterType="com.bit.project3.model.entity.CustomerVo" resultType="com.bit.project3.model.entity.CustomerVo">
 		select * from user where user_id =#{user_id} and user_password=#{user_password}
 	</select>
+	<select id="selectAll" parameterType="com.bit.project3.model.entity.CustomerVo" resultType="com.bit.project3.model.entity.CustomerVo">
+		select * from user
+	</select>
 
 </mapper>

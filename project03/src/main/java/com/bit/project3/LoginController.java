@@ -1,6 +1,5 @@
 package com.bit.project3;
 
-import java.lang.annotation.Inherited;
 import java.sql.SQLException;
 
 import javax.inject.Inject;
@@ -10,14 +9,13 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bit.project3.model.entity.CustomerVo;
 import com.bit.project3.service.CustomerService;
+
 
 @Controller
 public class LoginController {
@@ -25,7 +23,7 @@ public class LoginController {
 	
 	@Inject
 	CustomerService service;
-	
+
 	//회원 가입 get
 	@RequestMapping(value="/register",method = RequestMethod.GET)
 	public void getRefister() {
@@ -47,6 +45,7 @@ public class LoginController {
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public void getLogin() {
 		logger.info("get login");
+		
 	}
 	
 

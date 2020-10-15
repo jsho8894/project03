@@ -6,20 +6,6 @@
 	<title>Home</title>
 <%@ include file="template/header.jspf" %>
 		<style type="text/css">
-		.login {
-			text-align: right;
-			}
-		.login > p{
-			display: inline-block;
-			direction: none;
-		}
-		.login > p > a{
-			color: black;
-		}
-		.login > p > a:hover {
-			text-decoration: none;
-			color: black;
-		}
 		.item > img {
 			margin: 0px auto;
 		}

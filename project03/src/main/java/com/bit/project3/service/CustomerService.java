@@ -13,5 +13,6 @@ public interface CustomerService {
 	
 	public void register(CustomerVo cusvo) throws SQLException;
 	public CustomerVo login(CustomerVo cusvo) throws SQLException;
+	public void listService(Model model) throws SQLException;
 
 }

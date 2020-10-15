@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.bit.project3.model.CustomerDao;
 import com.bit.project3.model.entity.CustomerVo;
@@ -33,6 +34,15 @@ public class CustomerServiceImpl implements CustomerService {
 		System.out.println(cusvo);
 		
 		return dao.login(cusvo);
+	}
+
+
+	@Override
+	public void listService(Model model) throws SQLException {
+		CustomerDao dao = sqlSession.getMapper(CustomerDao.class);
+		System.out.println(dao);
+		model.addAttribute("list", dao.selectAll());
+		
 	}
 
 }
