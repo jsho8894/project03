@@ -13,12 +13,11 @@ public class HommeDaoMybatisImpl extends SqlSessionDaoSupport implements HommeDa
 	public List<HommeVo> selectAll() throws SQLException {
 		return getSqlSession().selectList("homme.selectAll");
 	}
-	
+
 	@Override
 	public HommeVo selectOne(String jname) throws SQLException {
-		return getSqlSession().selectOne("homme.selectOne", jname);
+		return getSqlSession().selectOne("homme.selectOne",jname);
 	}
-
 	
 
 }

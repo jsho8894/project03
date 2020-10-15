@@ -11,7 +11,7 @@
 	<style type="text/css">
 		.sidenav {
 			height: 80%; /* Full-height: remove this if you want "auto" height */
-			width: 300x; /* Set the width of the sidebar */
+			width: 250px; /* Set the width of the sidebar */
 			position: fixed; /* Fixed Sidebar (stay in place on scroll) */
 			z-index: 1; /* Stay on top */
 			top: 80px; /* Stay at the top */
@@ -80,7 +80,7 @@
 			width : 250px;
 			font-size: 12px;
 			color : #111111;
-		}
+		}	
 		
 		.one {
 		    float: left;
@@ -91,6 +91,17 @@
 		.two{
 		    float: left;
 		    width:10%;
+		}
+		
+		.two_p1{
+		    float: left;
+		    width:10%;
+		    cursor: pointer;
+		}
+		.two_m1{
+		    float: left;
+		    width:10%;
+		    cursor: pointer;
 		}
 		
 		.three {
@@ -122,22 +133,46 @@
 		$(function(){
 			$('.login').remove();
 		});
-				
- 	 	$(function(){
+		
+						
+ 		$(function(){
+ 	 		var a = 1;
+ 	 		var b = 1;
+ 	 		var c = 1;
+ 	 		var hap = $(".jprice").val(); 
+ 	 		
 			$("#Size").change(function(){
 				if($("#Size option:selected").val()=='s'){
 $(".pantsSize").append("<div class = 'product_option_1'>"+
 							"<div class = 'one'>S</div>"+
-							"<div class = 'two'>1</div>"+
-							"<div class = 'two'>+</div>"+
-							"<div class = 'two'>-</div>"+
-							"<div class = 'three'>${bean.jname}</div>"+
+							"<div class = 'two'>"+a+"</div>"+
+							"<div class = 'two_p1'>+</div>"+
+							"<div class = 'two_m1'>-</div>"+
+							"<div class = 'three'>"+${detail.jprice}+"</div>"+
 							"<div class = 'four_1'>x</div>"+
-						"</div><br/>");	
+							"<br/>"+
+						"</div>");	
 				}
 				$(function(){
 			 	 	$('.four_1').click(function(){
 						$('.product_option_1').remove();
+						
+			 	 	});
+				});
+				
+				$(function(){
+			 	 	$('.two_p1').click(function(){
+						a = a+1;
+						$('.two').text(a);
+						$('.three').text(a*hap);
+			 	 	});
+				});
+				
+				$(function(){
+			 	 	$('.two_m1').click(function(){
+						a = a-1;					
+						$('.two').text(a);
+						$('.three').text(a*hap);
 			 	 	});
 				});
 			 
@@ -151,9 +186,10 @@ $(".pantsSize").append("<div class = 'product_option_2'>"+
 							"<div class = 'two'>수량</div>"+
 							"<div class = 'two'>+</div>"+
 							"<div class = 'two'>-</div>"+
-							"<div class = 'three'>${bean.jname}</div>"+
+							"<div class = 'three'>"+${detail.jprice}+"</div>"+
 							"<div class = 'four_2'>x</div>"+
-						"</div><br/>");	
+							"<br/>"+
+						"</div>");	
 				}
 				$(function(){
 			 	 	$('.four_2').click(function(){
@@ -171,9 +207,10 @@ $(".pantsSize").append("<div class = 'product_option_3'>"+
 							"<div class = 'two'>수량</div>"+
 							"<div class = 'two'>+</div>"+
 							"<div class = 'two'>-</div>"+
-							"<div class = 'three'>${bean.jname}</div>"+
+							"<div class = 'three'>"+${detail.jprice}+"</div>"+
 							"<div class = 'four_3'>x</div>"+
-						"</div><br/>");	
+							"<br/>"+
+						"</div>");	
 				}
 				$(function(){
 			 	 	$('.four_3').click(function(){
@@ -198,12 +235,13 @@ $(".pantsSize").append("<div class = 'product_option_3'>"+
   	/
   <a href="#">REGISTER</a><br/><br/>
 	 <div class = "pantsTitle" style = "text-align: left; font-size: 17px;"   >
-	 	Waste Land
+	 	${detail.jname }
 	 </div><br/>
 	 <div class = "pantsPrice" style = "text-align: left; font-size: 12px;" >
-	 	₩99,000
+	 	₩ ${detail.jprice}
 	 </div><br/>
 	 <div class = "pantsSize">
+	 <input type="hidden" class="jprice" value="${detail.jprice}"/>
 		<select id = "Size" class="form-control" >
 		  	<option value = "" >SIZE</option>
 		  	<option value = "s">S</option>
@@ -250,17 +288,17 @@ $(".pantsSize").append("<div class = 'product_option_3'>"+
 		</div>
 	</div><br/>
 	<!-- 클릭시 같이 밀려나게... -->
-	<button>BUY NOW</button></div>
-<ul id = "jeans" class="row">
- <c:forEach items = "${detail}" var = "detail" >
-  <li class = "col-md-12">
-  	<div class = "jeansImg" >
-  		<img src = "${pageContext.request.contextPath }/resources/jeanImgs/WasteLand/">
-  	</div>
-  </li>
- </c:forEach>
-</ul>
+	<button>BUY NOW</button>
+</div>
+	<ul id = "jeans" class="row">
+	  <li class = "col-md-12">
+	   <div class = "jeansImg" >
+	 	 <c:forEach begin="1" end="${detail.jcount}" varStatus="st">
+	 	  <img src = "${pageContext.request.contextPath }/resources/jeanImgs/${jname }/${jname}${st.index }.jpg">
+	 	 </c:forEach>
+	   </div>
+	  </li>
+	</ul>
 	<%@ include file="../template/footer.jspf" %>
-
 </body>
 </html>
