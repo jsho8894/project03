@@ -63,68 +63,47 @@
 			width: 200px;
 		}
 		
-		.product_option_1 {
+		.product_option_S, .product_option_M, .product_option_L {
 			margin-top: 10px;
 			width : 250px;
 			font-size: 12px;
 			color : #111111;
-		}
-		.product_option_2 {
-			margin-top: 10px;
-			width : 250px;
-			font-size: 12px;
-			color : #111111;
-		}
-		.product_option_3 {
-			margin-top: 10px;
-			width : 250px;
-			font-size: 12px;
-			color : #111111;
-		}	
-		
-		.one {
-		    float: left;
-		    width:10%;
-		    text-align: left;
 		}
 
-		.two{
+		.Ssize, .Msize, .Lsize {
+		    float:left;
+		    width:10%;
+		    text-align:center;
+		}
+
+		.Scount, .Mcount, .Lcount{
+			text-align : center;
 		    float: left;
 		    width:10%;
 		}
-		
-		.two_p1{
+				
+		.Splus, .Sminus, .Mplus, .Mminus, .Lplus, .Lminus{
+			border : 1px solid black;
+			font-size : 15px;
+		 	text-align : center;
+			margin-left : 5px;
 		    float: left;
 		    width:10%;
 		    cursor: pointer;
 		}
-		.two_m1{
-		    float: left;
-		    width:10%;
-		    cursor: pointer;
-		}
 		
-		.three {
+		.Sprice, .Mprice, .Lprice {
 			float: left;
 			margin-left: 30px;
 		    width:10%;
 		}
 
-		.four_1{
+		.Sclose, .Mclose, .Lclose {
 		    float: right;
 		    width:5%;
 		    cursor: pointer;
 		}
-		.four_2{
-		    float: right;
-		    width:5%;
-		    cursor: pointer;
-		}
-		.four_3{
-		    float: right;
-		    width:5%;
-		    cursor: pointer;
-		}
+
 		
 	</style>	
 	<script type="text/javascript" 	src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
@@ -133,95 +112,108 @@
 		$(function(){
 			$('.login').remove();
 		});
-		
-						
- 		$(function(){
- 	 		var a = 1;
- 	 		var b = 1;
- 	 		var c = 1;
- 	 		var hap = $(".jprice").val(); 
+								
+ $(function(){
+ 	 	var scount = 1;
+ 	 	var mcount = 1;
+ 	 	var lcount = 1;
+ 	 	var amount = $(".Jprice").val(); 
  	 		
-			$("#Size").change(function(){
-				if($("#Size option:selected").val()=='s'){
-$(".pantsSize").append("<div class = 'product_option_1'>"+
-							"<div class = 'one'>S</div>"+
-							"<div class = 'two'>"+a+"</div>"+
-							"<div class = 'two_p1'>+</div>"+
-							"<div class = 'two_m1'>-</div>"+
-							"<div class = 'three'>"+${detail.jprice}+"</div>"+
-							"<div class = 'four_1'>x</div>"+
+		$("#Size").change(function(){	
+			
+			if($("#Size option:selected").val()=='s'){				
+				$(".pantsSize").append("<div class = 'product_option_S'>"+
+						"<div class = 'Ssize'>S</div>"+
+							"<div class = 'Scount'>"+scount+"</div>"+
+							"<div class = 'Splus'>+</div>"+
+							"<div class = 'Sminus'>-</div>"+
+							"<div class = 'Sprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Sclose'>x</div>"+
+							"<br/>"+
+						"</div>");					
+			}
+		
+			if($("#Size option:selected").val()=='m'){
+				$(".pantsSize").append("<div class = 'product_option_M'>"+
+						"<div class = 'Msize'>M</div>"+
+							"<div class = 'Mcount'>"+mcount+"</div>"+
+							"<div class = 'Mplus'>+</div>"+
+							"<div class = 'Mminus'>-</div>"+
+							"<div class = 'Mprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Mclose'>x</div>"+
 							"<br/>"+
 						"</div>");	
-				}
-				$(function(){
-			 	 	$('.four_1').click(function(){
-						$('.product_option_1').remove();
-						
-			 	 	});
-				});
-				
-				$(function(){
-			 	 	$('.two_p1').click(function(){
-						a = a+1;
-						$('.two').text(a);
-						$('.three').text(a*hap);
-			 	 	});
-				});
-				
-				$(function(){
-			 	 	$('.two_m1').click(function(){
-						a = a-1;					
-						$('.two').text(a);
-						$('.three').text(a*hap);
-			 	 	});
-				});
-			 
-			});			
-		});
- 	 	$(function(){
-			$("#Size").change(function(){
-				if($("#Size option:selected").val()=='m'){
-$(".pantsSize").append("<div class = 'product_option_2'>"+
-							"<div class = 'one'>M</div>"+
-							"<div class = 'two'>수량</div>"+
-							"<div class = 'two'>+</div>"+
-							"<div class = 'two'>-</div>"+
-							"<div class = 'three'>"+${detail.jprice}+"</div>"+
-							"<div class = 'four_2'>x</div>"+
-							"<br/>"+
-						"</div>");	
-				}
-				$(function(){
-			 	 	$('.four_2').click(function(){
-						$('.product_option_2').remove();
-			 	 	});
-				});
-			 
-			});			
-		});
- 	 	$(function(){
-			$("#Size").change(function(){
-				if($("#Size option:selected").val()=='l'){
-$(".pantsSize").append("<div class = 'product_option_3'>"+
-							"<div class = 'one'>L</div>"+
-							"<div class = 'two'>수량</div>"+
-							"<div class = 'two'>+</div>"+
-							"<div class = 'two'>-</div>"+
-							"<div class = 'three'>"+${detail.jprice}+"</div>"+
-							"<div class = 'four_3'>x</div>"+
-							"<br/>"+
-						"</div>");	
-				}
-				$(function(){
-			 	 	$('.four_3').click(function(){
-						$('.product_option_3').remove();
-			 	 	});
-				});
-			 
-			});			
-		}); 
+			}
 
-	 
+			if ($("#Size option:selected").val()=='l'){
+				$(".pantsSize").append("<div class = 'product_option_L'>"+
+						"<div class = 'Lsize'>L</div>"+
+							"<div class = 'Lcount'>"+lcount+"</div>"+
+							"<div class = 'Lplus'>+</div>"+
+							"<div class = 'Lminus'>-</div>"+
+							"<div class = 'Lprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Lclose'>x</div>"+
+							"<br/>"+
+						"</div>");	
+			} 
+			
+			/* Size S */			
+		 	 	$('.Sclose').click(function(){
+					$('.product_option_S').remove();
+					scount = 1;
+		 	 	});
+
+		 	 	$('.Splus').click(function(e){
+					scount = scount+1;
+					$('.Scount').text(scount);
+					$('.Sprice').text(scount*amount);
+		 	 	});
+		 	 	
+		 	 	$('.Sminus').click(function(e){
+					scount = scount-1;	
+					$('.Scount').text(scount);
+					$('.Sprice').text(scount*amount);
+		 	 	});
+			
+			/* Size M */
+		 	 	$('.Mclose').click(function(){
+					$('.product_option_M').remove();
+					mcount = 1;
+		 	 	});
+	
+		 	 	$('.Mplus').click(function(e){
+					mcount = mcount+1;
+					$('.Mcount').text(mcount);
+					$('.Mprice').text(mcount*amount);
+		 	 	});
+							
+		 	 	$('.Mminus').click(function(e){
+					mcount = mcount-1;	
+					$('.Mcount').text(mcount);	
+					$('.Mprice').text(mcount*amount);
+
+		 	 	});
+			
+			/* Size L */
+			 	 $('.Lclose').click(function(){
+					$('.product_option_L').remove();
+					lcount = 1;
+			 	 });
+				
+			 	 $('.Lplus').click(function(){
+					lcount = lcount+1;
+					$('.Lcount').text(lcount);
+					$('.Lprice').text(lcount*amount);
+			 	 });
+
+			 	 $('.Lminus').click(function(){
+					lcount = lcount-1;	
+					$('.Lcount').text(lcount);
+					$('.Lprice').text(lcount*amount);
+			 	 });	 		 	 
+	});
+	
+});
 	</script>
 </head>
 <body>
@@ -241,7 +233,7 @@ $(".pantsSize").append("<div class = 'product_option_3'>"+
 	 	₩ ${detail.jprice}
 	 </div><br/>
 	 <div class = "pantsSize">
-	 <input type="hidden" class="jprice" value="${detail.jprice}"/>
+	 <input type="hidden" class="Jprice" value="${detail.jprice}"/>
 		<select id = "Size" class="form-control" >
 		  	<option value = "" >SIZE</option>
 		  	<option value = "s">S</option>
