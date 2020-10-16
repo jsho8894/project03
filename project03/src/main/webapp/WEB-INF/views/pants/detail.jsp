@@ -103,11 +103,17 @@
 		    width:5%;
 		    cursor: pointer;
 		}
+		
+		.Total_price {
+			width : 240px;
+			height: 20px;
+
+		}
 
 		
 	</style>	
-	<script type="text/javascript" 	src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" 	src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('.login').remove();
@@ -117,7 +123,8 @@
  	 	var scount = 1;
  	 	var mcount = 1;
  	 	var lcount = 1;
- 	 	var amount = $(".Jprice").val(); 
+ 	 	var amount = $(".Jprice").val();
+ 	 	var total = 0;
  	 		
 		$("#Size").change(function(){	
 			
@@ -132,7 +139,7 @@
 							"<br/>"+
 						"</div>");					
 			}
-		
+			
 			if($("#Size option:selected").val()=='m'){
 				$(".pantsSize").append("<div class = 'product_option_M'>"+
 						"<div class = 'Msize'>M</div>"+
@@ -145,7 +152,7 @@
 						"</div>");	
 			}
 
-			if ($("#Size option:selected").val()=='l'){
+			if($("#Size option:selected").val()=='l'){
 				$(".pantsSize").append("<div class = 'product_option_L'>"+
 						"<div class = 'Lsize'>L</div>"+
 							"<div class = 'Lcount'>"+lcount+"</div>"+
@@ -155,7 +162,7 @@
 							"<div class = 'Lclose'>x</div>"+
 							"<br/>"+
 						"</div>");	
-			} 
+			}	 
 			
 			/* Size S */			
 		 	 	$('.Sclose').click(function(){
@@ -163,16 +170,17 @@
 					scount = 1;
 		 	 	});
 
-		 	 	$('.Splus').click(function(e){
+		 	 	$('.Splus').off().click(function(e){
 					scount = scount+1;
 					$('.Scount').text(scount);
 					$('.Sprice').text(scount*amount);
 		 	 	});
 		 	 	
-		 	 	$('.Sminus').click(function(e){
+		 	 	$('.Sminus').off().click(function(e){
 					scount = scount-1;	
 					$('.Scount').text(scount);
 					$('.Sprice').text(scount*amount);
+					
 		 	 	});
 			
 			/* Size M */
@@ -181,13 +189,13 @@
 					mcount = 1;
 		 	 	});
 	
-		 	 	$('.Mplus').click(function(e){
+		 	 	$('.Mplus').off().click(function(e){
 					mcount = mcount+1;
 					$('.Mcount').text(mcount);
 					$('.Mprice').text(mcount*amount);
 		 	 	});
 							
-		 	 	$('.Mminus').click(function(e){
+		 	 	$('.Mminus').off().click(function(e){
 					mcount = mcount-1;	
 					$('.Mcount').text(mcount);	
 					$('.Mprice').text(mcount*amount);
@@ -200,17 +208,20 @@
 					lcount = 1;
 			 	 });
 				
-			 	 $('.Lplus').click(function(){
+			 	 $('.Lplus').off().click(function(){
 					lcount = lcount+1;
 					$('.Lcount').text(lcount);
 					$('.Lprice').text(lcount*amount);
 			 	 });
 
-			 	 $('.Lminus').click(function(){
+			 	 $('.Lminus').off().click(function(){
 					lcount = lcount-1;	
 					$('.Lcount').text(lcount);
 					$('.Lprice').text(lcount*amount);
-			 	 });	 		 	 
+			 	 });
+			 	 
+			/* Total price*/
+				$('Total_price').text(total);
 	});
 	
 });
@@ -226,7 +237,7 @@
   <a href="#">LOGIN</a>
   	/
   <a href="#">REGISTER</a><br/><br/>
-	 <div class = "pantsTitle" style = "text-align: left; font-size: 17px;"   >
+	 <div class = "pantsTitle" style = "text-align: left; font-size: 17px;" >
 	 	${detail.jname }
 	 </div><br/>
 	 <div class = "pantsPrice" style = "text-align: left; font-size: 12px;" >
@@ -241,7 +252,15 @@
 		  	<option value = "l">L</option>
 		</select>
 	</div><br/>
+	
+	<table class = "Total_price">
+		<tr>
+			<th>총 상품 금액</th>
+			<td>원</td>
+		</tr>
 
+	</table>
+	<br/>
 	<div class ="dropdown">
 		<div class = "detail" > DETAILS <br/>
 			<span class = "detailInfo">
@@ -280,13 +299,13 @@
 		</div>
 	</div><br/>
 	<!-- 클릭시 같이 밀려나게... -->
-	<button>BUY NOW</button>
+	<button >BUY NOW</button>
 </div>
 	<ul id = "jeans" class="row">
 	  <li class = "col-md-12">
 	   <div class = "jeansImg" >
 	 	 <c:forEach begin="1" end="${detail.jcount}" varStatus="st">
-	 	  <img src = "${pageContext.request.contextPath }/resources/jeanImgs/${jname }/${jname}${st.index }.jpg">
+	 	  <img src = "${pageContext.request.contextPath }/resources/jeanImgs/${jname}/${jname}${st.index}.jpg">
 	 	 </c:forEach>
 	   </div>
 	  </li>
