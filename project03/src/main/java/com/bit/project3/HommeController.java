@@ -52,6 +52,10 @@ public class HommeController {
 	public String SaleList() {
 		return "sale";
 	}
+	@RequestMapping("/buycheck")
+	public String Buycheck() {
+		return "buycheck";
+	}
 
 }
 

@@ -62,7 +62,7 @@ public class LoginController {
 		}else {
 			session.setAttribute("customer", login);
 		}
-		return "redirect:/";	
+		return null;	
 	}
 	//·Î±×¾Æ¿ô
 	@RequestMapping(value="/logout", method = RequestMethod.GET)

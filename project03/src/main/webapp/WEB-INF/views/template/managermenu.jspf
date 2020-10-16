@@ -5,7 +5,7 @@
 			<div class="login">
 				<c:if test="${customer != null}">
 					<p>${customer.user_name }님 로그인 중</p><br/>
-				<p><a href="../logout">로그아웃</a></p>
+				<p><a href="${pageContext.request.contextPath }/logout">로그아웃</a></p>
 				</c:if>
 				<c:if test="${customer == null}">
 				<p><a href="../login">로그인&nbsp;&nbsp;&nbsp;l</a></p>

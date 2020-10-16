@@ -45,4 +45,27 @@ public class CustomerServiceImpl implements CustomerService {
 		
 	}
 
+
+	@Override
+	public void oneEditService(CustomerVo bean) throws SQLException {
+		CustomerDao dao=sqlSession.getMapper(CustomerDao.class);
+		dao.updateOne(bean);
+		
+	}
+
+
+	@Override
+	public void myinfoService(Model model, String user_id) throws SQLException {
+		CustomerDao dao=sqlSession.getMapper(CustomerDao.class);
+		model.addAttribute("bean",dao.selectOne(user_id));
+		
+	}
+
+
+
+	
+
+
+
+
 }

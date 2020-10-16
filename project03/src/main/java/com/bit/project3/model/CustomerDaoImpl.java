@@ -6,6 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.ui.Model;
 
 import com.bit.project3.model.entity.CustomerVo;
 
@@ -41,5 +42,22 @@ public class CustomerDaoImpl implements CustomerDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	@Override
+	public void updateOne(CustomerVo bean) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public CustomerVo selectOne(String user_id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 
 }

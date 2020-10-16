@@ -11,7 +11,13 @@
 		select * from user where user_id =#{user_id} and user_password=#{user_password}
 	</select>
 	<select id="selectAll" parameterType="com.bit.project3.model.entity.CustomerVo" resultType="com.bit.project3.model.entity.CustomerVo">
-		select * from user
+		select * from user where user_level=2
 	</select>
+	<update id="updateOne">
+  		update user set user_name=#{user_name},user_password=#{user_password},user_contact=#{user_contact},user_addr=#{user_addr},user_email=#{user_email} where user_id=#{user_id}
+  	</update>
+  	<select id="selectOne" parameterType="com.bit.project3.model.entity.CustomerVo" resultType="com.bit.project3.model.entity.CustomerVo">
+  		select * from user where user_id=#{user_id}
+  	</select>
 
 </mapper>
