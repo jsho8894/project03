@@ -108,9 +108,7 @@
 			width : 240px;
 			height: 20px;
 
-		}
-
-		
+		}		
 	</style>	
 	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
@@ -123,8 +121,10 @@
  	 	var scount = 1;
  	 	var mcount = 1;
  	 	var lcount = 1;
- 	 	var amount = $(".Jprice").val();
+ 	 	var price = $(".Jprice").val();
  	 	var total = 0;
+ 	 	//total = *(parseInt($(".Sprice").text());
+ 	 	//클릭시 값이 같이 바뀌어야되고 지워지면 값이 빼져야 함
  	 		
 		$("#Size").change(function(){	
 			
@@ -137,9 +137,12 @@
 							"<div class = 'Sprice'>"+${detail.jprice}+"</div>"+
 							"<div class = 'Sclose'>x</div>"+
 							"<br/>"+
-						"</div>");					
+						"</div>");
+				
+				total = total + parseInt($(".Sprice").text());
 			}
 			
+								
 			if($("#Size option:selected").val()=='m'){
 				$(".pantsSize").append("<div class = 'product_option_M'>"+
 						"<div class = 'Msize'>M</div>"+
@@ -150,6 +153,8 @@
 							"<div class = 'Mclose'>x</div>"+
 							"<br/>"+
 						"</div>");	
+				
+				total = total + parseInt($(".Mprice").text());
 			}
 
 			if($("#Size option:selected").val()=='l'){
@@ -162,68 +167,80 @@
 							"<div class = 'Lclose'>x</div>"+
 							"<br/>"+
 						"</div>");	
+				
+				total = total + parseInt($(".Lprice").text());
 			}	 
 			
 			/* Size S */			
-		 	 	$('.Sclose').click(function(){
-					$('.product_option_S').remove();
-					scount = 1;
-		 	 	});
+		 	 $('.Sclose').click(function(){
+				$('.product_option_S').remove();
+				scount = 1;
+			 });
 
-		 	 	$('.Splus').off().click(function(e){
-					scount = scount+1;
-					$('.Scount').text(scount);
-					$('.Sprice').text(scount*amount);
-		 	 	});
-		 	 	
-		 	 	$('.Sminus').off().click(function(e){
-					scount = scount-1;	
-					$('.Scount').text(scount);
-					$('.Sprice').text(scount*amount);
+		 	 $('.Splus').off().click(function(e){
+				scount = scount+1;
+				$('.Scount').text(scount);
+				$('.Sprice').text(scount*price);
 					
-		 	 	});
+				total = total + parseInt($(".Sprice").text());
+		 	 });
+		 	 	
+		 	 $('.Sminus').off().click(function(e){
+				scount = scount-1;	
+				$('.Scount').text(scount);
+				$('.Sprice').text(scount*price);
+				
+				total = total - parseInt($(".Sprice").text());
+		 	 });
 			
 			/* Size M */
-		 	 	$('.Mclose').click(function(){
-					$('.product_option_M').remove();
-					mcount = 1;
-		 	 	});
+		 	 $('.Mclose').click(function(){
+				$('.product_option_M').remove();
+				mcount = 1;
+		 	 });
 	
-		 	 	$('.Mplus').off().click(function(e){
-					mcount = mcount+1;
-					$('.Mcount').text(mcount);
-					$('.Mprice').text(mcount*amount);
-		 	 	});
+		 	 $('.Mplus').off().click(function(e){
+				mcount = mcount+1;
+				$('.Mcount').text(mcount);
+				$('.Mprice').text(mcount*price);
+				
+				total = total + parseInt($(".Mprice").text());
+		 	 });
 							
-		 	 	$('.Mminus').off().click(function(e){
-					mcount = mcount-1;	
-					$('.Mcount').text(mcount);	
-					$('.Mprice').text(mcount*amount);
-
-		 	 	});
+		 	 $('.Mminus').off().click(function(e){
+				mcount = mcount-1;	
+				$('.Mcount').text(mcount);	
+				$('.Mprice').text(mcount*price);
+				
+				total = total - parseInt($(".Mprice").text());
+		 	 });
 			
 			/* Size L */
-			 	 $('.Lclose').click(function(){
-					$('.product_option_L').remove();
-					lcount = 1;
+			 $('.Lclose').click(function(){
+				$('.product_option_L').remove();
+				lcount = 1;
 			 	 });
 				
-			 	 $('.Lplus').off().click(function(){
-					lcount = lcount+1;
-					$('.Lcount').text(lcount);
-					$('.Lprice').text(lcount*amount);
+			 	$('.Lplus').off().click(function(){
+				lcount = lcount+1;
+				$('.Lcount').text(lcount);
+				$('.Lprice').text(lcount*price);
+				total = total + parseInt($(".Lprice").text());
 			 	 });
 
-			 	 $('.Lminus').off().click(function(){
-					lcount = lcount-1;	
-					$('.Lcount').text(lcount);
-					$('.Lprice').text(lcount*amount);
-			 	 });
+			 	$('.Lminus').off().click(function(){
+				lcount = lcount-1;	
+				$('.Lcount').text(lcount);
+				$('.Lprice').text(lcount*price);
+				
+				total = total - parseInt($(".Lprice").text());
+			  });
 			 	 
-			/* Total price*/
-				$('Total_price').text(total);
+				/* Total price*/
+					$(function(){
+						$('.tprice').text(total);
+		});
 	});
-	
 });
 	</script>
 </head>
@@ -256,7 +273,7 @@
 	<table class = "Total_price">
 		<tr>
 			<th>총 상품 금액</th>
-			<td>원</td>
+			<td class = "tprice">0원</td>
 		</tr>
 
 	</table>
