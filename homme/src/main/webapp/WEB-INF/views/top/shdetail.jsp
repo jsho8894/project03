@@ -27,7 +27,7 @@
 			list-style: none;
 		}
 		
-		#jeans{
+		#shirt{
 			margin : 0px auto;
 			margin-left : 300px;
 		}
@@ -121,7 +121,7 @@
  	 	var scount = 1;
  	 	var mcount = 1;
  	 	var lcount = 1;
- 	 	var price = $(".Jprice").val();
+ 	 	var price = $(".Shprice").val();
  	 	var total = 0;
  	 	//total = *(parseInt($(".Sprice").text());
  	 	//클릭시 값이 같이 바뀌어야되고 지워지면 값이 빼져야 함
@@ -129,27 +129,26 @@
 		$("#Size").change(function(){	
 			
 			if($("#Size option:selected").val()=='s'){				
-				$(".pantsSize").append("<div class = 'product_option_S'>"+
+				$(".shirtSize").append("<div class = 'product_option_S'>"+
 						"<div class = 'Ssize'>S</div>"+
 							"<div class = 'Scount'>"+scount+"</div>"+
 							"<div class = 'Splus'>+</div>"+
 							"<div class = 'Sminus'>-</div>"+
-							"<div class = 'Sprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Sprice'>"+${shdetail.shprice}+"</div>"+
 							"<div class = 'Sclose'>x</div>"+
 							"<br/>"+
 						"</div>");
 								
 				total = total + parseInt($(".Sprice").text());
 			}
-			
 								
 			if($("#Size option:selected").val()=='m'){
-				$(".pantsSize").append("<div class = 'product_option_M'>"+
+				$(".shirtSize").append("<div class = 'product_option_M'>"+
 						"<div class = 'Msize'>M</div>"+
 							"<div class = 'Mcount'>"+mcount+"</div>"+
 							"<div class = 'Mplus'>+</div>"+
 							"<div class = 'Mminus'>-</div>"+
-							"<div class = 'Mprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Mprice'>"+${shdetail.shprice}+"</div>"+
 							"<div class = 'Mclose'>x</div>"+
 							"<br/>"+
 						"</div>");	
@@ -158,19 +157,18 @@
 			}
 
 			if($("#Size option:selected").val()=='l'){
-				$(".pantsSize").append("<div class = 'product_option_L'>"+
+				$(".shirtSize").append("<div class = 'product_option_L'>"+
 						"<div class = 'Lsize'>L</div>"+
 							"<div class = 'Lcount'>"+lcount+"</div>"+
 							"<div class = 'Lplus'>+</div>"+
 							"<div class = 'Lminus'>-</div>"+
-							"<div class = 'Lprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Lprice'>"+${shdetail.shprice}+"</div>"+
 							"<div class = 'Lclose'>x</div>"+
 							"<br/>"+
 						"</div>");	
 				
 				total = total + parseInt($(".Lprice").text());
 			}	 
-			
 			
 			/* Size S */			
 		 	 $('.Sclose').click(function(){
@@ -239,7 +237,7 @@
 			 	 
 				/* Total price*/
 					$(function(){
-						$('.tprice').text(total);
+						$('.totprice').text(total);
 		});
 	});
 });
@@ -255,14 +253,14 @@
   <a href="#">LOGIN</a>
   	/
   <a href="#">REGISTER</a><br/><br/>
-	 <div class = "pantsTitle" style = "text-align: left; font-size: 17px;" >
-	 	${detail.jname }
+	 <div class = "topTitle" style = "text-align: left; font-size: 17px;" >
+	 	${shdetail.shname }
 	 </div><br/>
-	 <div class = "pantsPrice" style = "text-align: left; font-size: 12px;" >
-	 	₩ ${detail.jprice}
+	 <div class = "topPrice" style = "text-align: left; font-size: 12px;" >
+	 	₩ ${shdetail.shprice}
 	 </div><br/>
-	 <div class = "pantsSize">
-	 <input type="hidden" class="Jprice" value="${detail.jprice}"/>
+	 <div class = "topSize">
+	 <input type="hidden" class="Shprice" value="${shdetail.shprice}"/>
 		<select id = "Size" class="form-control" >
 		  	<option value = "" >SIZE</option>
 		  	<option value = "s">S</option>
@@ -274,7 +272,7 @@
 	<table class = "Total_price">
 		<tr>
 			<th>총 상품 금액</th>
-			<td class = "tprice">0원</td>
+			<td class = "totprice">0원</td>
 		</tr>
 
 	</table>
@@ -319,11 +317,11 @@
 	<!-- 클릭시 같이 밀려나게... -->
 	<button >BUY NOW</button>
 </div>
-	<ul id = "jeans" class="row">
+	<ul id = "shirt" class="row">
 	  <li class = "col-md-12">
-	   <div class = "jeansImg" >
-	 	 <c:forEach begin="1" end="${detail.jcount}" varStatus="st">
-	 	  <img src = "${pageContext.request.contextPath }/resources/jeanImgs/${jname}/${jname}${st.index}.jpg">
+	   <div class = "shirtImg" >
+	 	 <c:forEach begin="1" end="${shdetail.shcount}" varStatus="st">
+	 	  <img src = "${pageContext.request.contextPath }/resources/shirtImgs/${shname}/${shname}${st.index}.jpg">
 	 	 </c:forEach>
 	   </div>
 	  </li>

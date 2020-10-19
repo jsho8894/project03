@@ -10,4 +10,32 @@
   	select * from jean where jname = #{jname}
   </select>
   
+   <select id ="tselectAll" resultType="com.homme.model.entity.TshirtVo">
+    select * from tshirt order by tnum asc
+  </select>
+  <select id ="tselectOne" resultType="com.homme.model.entity.TshirtVo">
+  	select * from tshirt where tname = #{tname}
+  </select>
+  
+   <select id ="shselectAll" resultType="com.homme.model.entity.ShirtVo">
+    select * from shirt order by shnum asc
+  </select>
+  <select id ="shselectOne" resultType="com.homme.model.entity.ShirtVo">
+  	select * from shirt where shname = #{shname}
+  </select>
+  
+   <select id ="hselectAll" resultType="com.homme.model.entity.HoodyVo">
+    select * from hoody order by hnum asc
+  </select>
+  <select id ="hselectOne" resultType="com.homme.model.entity.HoodyVo">
+  	select * from hoody where hname = #{hname}
+  </select>
+  
+  <select id ="swselectAll" resultType="com.homme.model.entity.SweaterVo">
+    select * from sweater order by swnum asc
+  </select>
+  <select id ="swselectOne" resultType="com.homme.model.entity.SweaterVo">
+  	select * from sweater where swname = #{swname}
+  </select>
+  
 </mapper>
