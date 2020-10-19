@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<<form name='homeForm' method="post" action="/login">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>    
+<form name='homeForm' method="post" action="/login">
 			<div class="login">
 				<c:if test="${customer != null}">
 					<p>${customer.user_name }님 로그인 중</p><br/>
@@ -12,7 +10,7 @@
 				<p><a href="../register">&nbsp;&nbsp;&nbsp;회원가입</a></p>
 				</c:if>
 			</div>
-	</form>
+</form>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
