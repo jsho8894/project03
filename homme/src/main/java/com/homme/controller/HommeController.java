@@ -24,18 +24,7 @@ public class HommeController {
 	public String sweaterList() {
 		return "sweater";
 	}
-<<<<<<< HEAD
 
-=======
-	@RequestMapping("/jean")
-	public String JeanList() {
-		return "jean";
-	}
-	@RequestMapping("/slacks")
-	public String SlacksList() {
-		return "slacks";
-	}
->>>>>>> zero-1
 	@RequestMapping("/coat")
 	public String CoattList() {
 		return "coat";
@@ -56,13 +45,11 @@ public class HommeController {
 	public String SaleList() {
 		return "sale";
 	}
-<<<<<<< HEAD
 	@RequestMapping("/buycheck")
 	public String Buycheck() {
 		return "buycheck";
 	}
-=======
->>>>>>> zero-1
+
 
 }
 

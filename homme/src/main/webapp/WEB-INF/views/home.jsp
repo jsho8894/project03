@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
    <meta charset="utf-8">
    <title>Home</title>
 <%@ include file="template/header.jspf" %>
@@ -15,20 +14,6 @@
          width: 335px;
       }
    </style>
-=======
-	<meta charset="utf-8">
-	<title>Home</title>
-<%@ include file="template/header.jspf" %>
-		<style type="text/css">
-		.item > img {
-			margin: 0px auto;
-		}
-		.item > img{
-			height: 650px;
-			width: 335px;
-		}
-	</style>
->>>>>>> zero-1
 </head>
 <body>
 <%@ include file="template/menu.jspf" %>
