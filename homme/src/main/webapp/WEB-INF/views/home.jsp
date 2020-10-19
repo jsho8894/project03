@@ -2,19 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="icon" type="image/png" href="http://example.com/myicon.png">
-	<meta charset="utf-8">
-	<title>Home</title>
+   <meta charset="utf-8">
+   <title>Home</title>
 <%@ include file="template/header.jspf" %>
-		<style type="text/css">
-		.item > img {
-			margin: 0px auto;
-		}
-		.item > img{
-			height: 650px;
-			width: 335px;
-		}
-	</style>
+      <style type="text/css">
+      .item > img {
+         margin: 0px auto;
+      }
+      .item > img{
+         height: 650px;
+         width: 335px;
+      }
+   </style>
 </head>
 <body>
 <%@ include file="template/menu.jspf" %>

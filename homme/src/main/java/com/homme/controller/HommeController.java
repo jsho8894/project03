@@ -24,14 +24,7 @@ public class HommeController {
 	public String sweaterList() {
 		return "sweater";
 	}
-	@RequestMapping("/jean")
-	public String JeanList() {
-		return "jean";
-	}
-	@RequestMapping("/slacks")
-	public String SlacksList() {
-		return "slacks";
-	}
+
 	@RequestMapping("/coat")
 	public String CoattList() {
 		return "coat";
