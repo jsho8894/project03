@@ -29,4 +29,14 @@
 			text-decoration: none;
 			color: black;
 		}
+
 		</style>
+
+	<script type="text/javascript" 
+	src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" 
+	src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
+	<script type="text/javascript">
+</script>
+	
+	</script>

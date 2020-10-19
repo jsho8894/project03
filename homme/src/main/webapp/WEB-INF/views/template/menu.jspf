@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
 <form name='homeForm' method="post" action="/login">
 			<div class="login">
 				<c:if test="${customer != null&&customer.user_level==2}">
@@ -17,7 +16,7 @@
 				<p><a href="${pageContext.request.contextPath }/register">&nbsp;&nbsp;&nbsp;회원가입</a></p>
 				</c:if>
 			</div>
-	</form>
+</form>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -33,7 +32,6 @@
       </button>
       <a class="navbar-brand" href="#">H O M M E</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="droplist">
       <ul class="nav navbar-nav">
@@ -48,11 +46,11 @@
             <li><a href="${pageContext.request.contextPath }/sweater/">SWEATER</a></li>
           </ul>
          </li>
-         <li class="dropdown">
+         <li id= "pantsMenu" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PANTS<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="${pageContext.request.contextPath }/jean/">JEAN</a></li>
-            <li><a href="${pageContext.request.contextPath }/slacks/">SLACKS</a></li>
+            <li><a href="${pageContext.request.contextPath }/pants/">데님</a></li>
+            <li><a href="${pageContext.request.contextPath }/pants/">슬랙스</a></li>
           </ul>
           </li>
           <li class="dropdown">
@@ -60,7 +58,7 @@
           <ul class="dropdown-menu">
             <li><a href="${pageContext.request.contextPath }/coat/">COAT</a></li>
             <li><a href="${pageContext.request.contextPath }/jacket/">JACKET</a></li>
-            <li><a href="${pageContext.request.contextPath }/outerc/">CARDIGAN</a></li>
+            <li><a href="${pageContext.request.contextPath }/cardigan/">CARDIGAN</a></li>
           </ul>
         </li>
         <li><a href="${pageContext.request.contextPath }/qna">QnA</a></li>
@@ -68,9 +66,5 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="container">
-	<div class="row" id="header">
-		<div class="col-md-12"></div>
-	</div>
-	<div class="row" id="content">
-		<div class="col-md-12">
+
+
