@@ -4,28 +4,17 @@ public class HommeVo {
 	private int jnum;
 	private String jname;
 	private int jprice;
-	private int jcount;
 
 	public HommeVo() {
 	}
 
-	public HommeVo(int jnum, String jname, int jprice, int jcount) {
+	public HommeVo(int jnum, String jname, int jprice, String jarray) {
 		super();
 		this.jnum = jnum;
 		this.jname = jname;
 		this.jprice = jprice;
-		this.jcount = jcount;
 	}
 	
-	
-	public int getJcount() {
-		return jcount;
-	}
-
-	public void setJcount(int jcount) {
-		this.jcount = jcount;
-	}
-
 	public int getJnum() {
 		return jnum;
 	}
@@ -50,12 +39,10 @@ public class HommeVo {
 		this.jprice = jprice;
 	}
 	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + jcount;
 		result = prime * result + ((jname == null) ? 0 : jname.hashCode());
 		result = prime * result + jnum;
 		result = prime * result + jprice;
@@ -71,8 +58,6 @@ public class HommeVo {
 		if (getClass() != obj.getClass())
 			return false;
 		HommeVo other = (HommeVo) obj;
-		if (jcount != other.jcount)
-			return false;
 		if (jname == null) {
 			if (other.jname != null)
 				return false;
@@ -87,7 +72,7 @@ public class HommeVo {
 
 	@Override
 	public String toString() {
-		return "HommeVo [jnum=" + jnum + ", jname=" + jname + ", jprice=" + jprice + ", jcount=" + jcount + "]";
+		return "HommeVo [jnum=" + jnum + ", jname=" + jname + ", jprice=" + jprice + ", jarray=" + "]";
 	}
 
 }

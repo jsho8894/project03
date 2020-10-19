@@ -8,16 +8,7 @@ public class CustomerVo {
 	private String user_contact;
 	private String user_addr;
 	private String user_email;
-	private int user_point;
 	
-	public int getUser_point() {
-		return user_point;
-	}
-
-	public void setUser_point(int user_point) {
-		this.user_point = user_point;
-	}
-
 	public CustomerVo(){
 	}
 
@@ -81,9 +72,7 @@ public class CustomerVo {
 	public String toString() {
 		return "CustomerVo [user_level=" + user_level + ", user_id=" + user_id + ", user_password=" + user_password
 				+ ", user_name=" + user_name + ", user_contact=" + user_contact + ", user_addr=" + user_addr
-				+ ", user_email=" + user_email + ", user_point=" + user_point + "]";
+				+ ", user_email=" + user_email + "]";
 	}
-
-	
 
 	}

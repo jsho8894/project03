@@ -12,6 +12,7 @@
 
 		 <!-- start content -->
 		 <!-- end content -->
+		
 <%@ include file="../template/footer.jspf" %>
 </body>
 </html>
