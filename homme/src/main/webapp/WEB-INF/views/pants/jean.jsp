@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +6,6 @@
 	<title>Pants</title>
 	<%@ include file="../template/header.jspf" %>
 	<style type="text/css">
-
 		li {
 			list-style: none;
 		}
