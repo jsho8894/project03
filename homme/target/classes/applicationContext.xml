@@ -34,5 +34,8 @@
 	<bean id="hommeDao" class="com.homme.model.HommeDaoMybatisImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
 	</bean>
+	<bean id="slacksDao" class="com.homme.model.SlacksDaoMybatisImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
+	</bean>
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>

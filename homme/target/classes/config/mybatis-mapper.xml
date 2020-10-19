@@ -9,5 +9,11 @@
   <select id ="selectOne" resultType="com.homme.model.entity.HommeVo">
   	select * from jean where jname = #{jname}
   </select>
+  <select id ="slselectAll" resultType="com.homme.model.entity.SlacksVo">
+    select * from slacks order by snum asc
+  </select>
+  <select id ="slselectOne" resultType="com.homme.model.entity.SlacksVo">
+  	select * from slacks where sname = #{sname}
+  </select>
   
 </mapper>
