@@ -7,7 +7,10 @@
 <title></title>
 <%@ include file="template/header.jspf" %>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7ecebb749d4eedfbd0f5e27f2ade7d789d8c40f6
 <style type="text/css">
 .btn{
 		width: 100px;
@@ -25,7 +28,10 @@
 		outline: none;
 	}
 </style>
+<<<<<<< HEAD
 >>>>>>> zero-1
+=======
+>>>>>>> 7ecebb749d4eedfbd0f5e27f2ade7d789d8c40f6
 </head>
 <body>
 <%@ include file="template/menu.jspf" %>

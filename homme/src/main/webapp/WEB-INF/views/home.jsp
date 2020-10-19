@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="utf-8">
    <title>Home</title>
+	<meta charset="utf-8">
 <%@ include file="template/header.jspf" %>
       <style type="text/css">
       .item > img {

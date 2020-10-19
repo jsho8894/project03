@@ -9,7 +9,6 @@ public class HommeVo {
 	public HommeVo() {
 	}
 
-
 	public HommeVo(int jnum, String jname, int jprice, int jcount) {
 		super();
 		this.jnum = jnum;
@@ -50,6 +49,7 @@ public class HommeVo {
 	public void setJprice(int jprice) {
 		this.jprice = jprice;
 	}
+	
 
 	@Override
 	public int hashCode() {
@@ -88,7 +88,6 @@ public class HommeVo {
 	@Override
 	public String toString() {
 		return "HommeVo [jnum=" + jnum + ", jname=" + jname + ", jprice=" + jprice + ", jcount=" + jcount + "]";
-		
 	}
 
 }

@@ -12,10 +12,6 @@
 
 		 <!-- start content -->
 		 <!-- end content -->
-<<<<<<< HEAD
-=======
-		
->>>>>>> zero-1
 <%@ include file="../template/footer.jspf" %>
 </body>
 </html>

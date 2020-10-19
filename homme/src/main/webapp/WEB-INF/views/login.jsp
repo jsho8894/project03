@@ -33,9 +33,12 @@
 <div id="login">
 	<form action="./result" method="post">
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<h1>로그인</h1>
 =======
 >>>>>>> zero-1
+=======
+>>>>>>> 7ecebb749d4eedfbd0f5e27f2ade7d789d8c40f6
 			<div>
 				<label for="user_id"></label>
 				<input type="text" id="user_id" name="user_id">

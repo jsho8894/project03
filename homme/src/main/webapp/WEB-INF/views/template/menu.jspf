@@ -1,22 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <form name='homeForm' method="post" action="/login">
-         <div class="login">
-            <c:if test="${customer != null&&customer.user_level==2}">
-               <p>${customer.user_name }님 로그인 중</p><br/>
-            <p><a href="${pageContext.request.contextPath }/mypage/${customer.user_id}">마이페이지</a></p>
-            <p><a href="${pageContext.request.contextPath }/logout">로그아웃</a></p>
-            </c:if>
-            <c:if test="${customer != null&&customer.user_level==1}">
-               <p>${customer.user_name }님 로그인 중</p><br/>
-            <p><a href="${pageContext.request.contextPath }/manager/">관리자 페이지</a></p>
-            <p><a href="${pageContext.request.contextPath }/logout">로그아웃</a></p>
-            </c:if>
-            <c:if test="${customer == null}">
-            <p><a href="${pageContext.request.contextPath }/login">로그인&nbsp;&nbsp;&nbsp;l</a></p>
-            <p><a href="${pageContext.request.contextPath }/register">&nbsp;&nbsp;&nbsp;회원가입</a></p>
-            </c:if>
-         </div>
-   </form>
+			<div class="login">
+				<c:if test="${customer != null&&customer.user_level==2}">
+					<p>${customer.user_name }님 로그인 중</p><br/>
+				<p><a href="${pageContext.request.contextPath }/mypage/${customer.user_id}">마이페이지</a></p>
+				<p><a href="${pageContext.request.contextPath }/logout">로그아웃</a></p>
+				</c:if>
+				<c:if test="${customer != null&&customer.user_level==1}">
+					<p>${customer.user_name }님 로그인 중</p><br/>
+				<p><a href="${pageContext.request.contextPath }/manager/">관리자 페이지</a></p>
+				<p><a href="${pageContext.request.contextPath }/logout">로그아웃</a></p>
+				</c:if>
+				<c:if test="${customer == null}">
+				<p><a href="${pageContext.request.contextPath }/login">로그인&nbsp;&nbsp;&nbsp;l</a></p>
+				<p><a href="${pageContext.request.contextPath }/register">&nbsp;&nbsp;&nbsp;회원가입</a></p>
+				</c:if>
+			</div>
+	</form>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -68,8 +70,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-   <div class="row" id="header">
-      <div class="col-md-12"></div>
-   </div>
-   <div class="row" id="content">
-      <div class="col-md-12">
+	<div class="row" id="header">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row" id="content">
+		<div class="col-md-12">
