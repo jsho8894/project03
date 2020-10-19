@@ -6,6 +6,26 @@
 <meta charset="UTF-8">
 <title></title>
 <%@ include file="template/header.jspf" %>
+<<<<<<< HEAD
+=======
+<style type="text/css">
+.btn{
+		width: 100px;
+		height: 50px;
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		font-weight: 500;
+		color: "gray";
+		background-color: white;
+		border: 1px solid lightgray;
+		border-radius: 10px;
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+	}
+</style>
+>>>>>>> zero-1
 </head>
 <body>
 <%@ include file="template/menu.jspf" %>

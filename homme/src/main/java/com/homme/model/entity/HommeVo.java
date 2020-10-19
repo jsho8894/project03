@@ -4,16 +4,24 @@ public class HommeVo {
 	private int jnum;
 	private String jname;
 	private int jprice;
+<<<<<<< HEAD
 	private int jcount;
+=======
+>>>>>>> zero-1
 
 	public HommeVo() {
 	}
 
+<<<<<<< HEAD
 	public HommeVo(int jnum, String jname, int jprice, int jcount) {
+=======
+	public HommeVo(int jnum, String jname, int jprice, String jarray) {
+>>>>>>> zero-1
 		super();
 		this.jnum = jnum;
 		this.jname = jname;
 		this.jprice = jprice;
+<<<<<<< HEAD
 		this.jcount = jcount;
 	}
 	
@@ -26,6 +34,10 @@ public class HommeVo {
 		this.jcount = jcount;
 	}
 
+=======
+	}
+	
+>>>>>>> zero-1
 	public int getJnum() {
 		return jnum;
 	}
@@ -50,12 +62,18 @@ public class HommeVo {
 		this.jprice = jprice;
 	}
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> zero-1
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+<<<<<<< HEAD
 		result = prime * result + jcount;
+=======
+>>>>>>> zero-1
 		result = prime * result + ((jname == null) ? 0 : jname.hashCode());
 		result = prime * result + jnum;
 		result = prime * result + jprice;
@@ -71,8 +89,11 @@ public class HommeVo {
 		if (getClass() != obj.getClass())
 			return false;
 		HommeVo other = (HommeVo) obj;
+<<<<<<< HEAD
 		if (jcount != other.jcount)
 			return false;
+=======
+>>>>>>> zero-1
 		if (jname == null) {
 			if (other.jname != null)
 				return false;
@@ -87,7 +108,11 @@ public class HommeVo {
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "HommeVo [jnum=" + jnum + ", jname=" + jname + ", jprice=" + jprice + ", jcount=" + jcount + "]";
+=======
+		return "HommeVo [jnum=" + jnum + ", jname=" + jname + ", jprice=" + jprice + ", jarray=" + "]";
+>>>>>>> zero-1
 	}
 
 }

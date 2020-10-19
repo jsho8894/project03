@@ -11,6 +11,7 @@
 		select * from user where user_id =#{user_id} and user_password=#{user_password}
 	</select>
 	<select id="selectAll" parameterType="com.homme.model.entity.CustomerVo" resultType="com.homme.model.entity.CustomerVo">
+<<<<<<< HEAD
 		select * from user where user_level=2
 	</select>
 	<update id="updateOne">
@@ -19,5 +20,9 @@
   	<select id="selectOne" parameterType="com.homme.model.entity.CustomerVo" resultType="com.homme.model.entity.CustomerVo">
   		select * from user where user_id=#{user_id}
   	</select>
+=======
+		select * from user
+	</select>
+>>>>>>> zero-1
 
 </mapper>

@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title></title>
 <%@ include file="template/header.jspf" %>
+<<<<<<< HEAD
 <style type="text/css">
 	h1 {
 		text-align: center;
@@ -15,11 +16,14 @@
 		color: red;
 	}
 </style>
+=======
+>>>>>>> zero-1
 </head>
 <body>
 <%@ include file="template/menu.jspf" %>
 				<div class="login">
 				<c:if test="${customer != null}">
+<<<<<<< HEAD
 					<h1>${customer.user_name }님 환영합니다</h1><br/>
 					<div align="center">
 					<button type="button" class="btn" onclick="location.href='${pageContext.request.contextPath }'" >HOME</button>
@@ -32,6 +36,10 @@
 				<button type="button" class="btn" onclick="location.href='./register'">회원가입</button>
 			</div>
 		</c:if>
+=======
+					<p>${customer.user_name }님 환영합니다</p><br/>
+				</c:if>
+>>>>>>> zero-1
 <%@ include file="template/footer.jspf" %>
 </body>
 </html>

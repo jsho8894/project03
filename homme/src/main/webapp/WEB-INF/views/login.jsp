@@ -32,7 +32,10 @@
 <%@ include file="template/menu.jspf" %>
 <div id="login">
 	<form action="./result" method="post">
+<<<<<<< HEAD
 	<h1>로그인</h1>
+=======
+>>>>>>> zero-1
 			<div>
 				<label for="user_id"></label>
 				<input type="text" id="user_id" name="user_id">

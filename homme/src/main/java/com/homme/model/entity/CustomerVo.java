@@ -8,6 +8,7 @@ public class CustomerVo {
 	private String user_contact;
 	private String user_addr;
 	private String user_email;
+<<<<<<< HEAD
 	private int user_point;
 	
 	public int getUser_point() {
@@ -18,6 +19,9 @@ public class CustomerVo {
 		this.user_point = user_point;
 	}
 
+=======
+	
+>>>>>>> zero-1
 	public CustomerVo(){
 	}
 
@@ -81,9 +85,15 @@ public class CustomerVo {
 	public String toString() {
 		return "CustomerVo [user_level=" + user_level + ", user_id=" + user_id + ", user_password=" + user_password
 				+ ", user_name=" + user_name + ", user_contact=" + user_contact + ", user_addr=" + user_addr
+<<<<<<< HEAD
 				+ ", user_email=" + user_email + ", user_point=" + user_point + "]";
 	}
 
 	
 
+=======
+				+ ", user_email=" + user_email + "]";
+	}
+
+>>>>>>> zero-1
 	}

@@ -6,7 +6,10 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+<<<<<<< HEAD
 import org.springframework.ui.Model;
+=======
+>>>>>>> zero-1
 
 import com.homme.model.entity.CustomerVo;
 
@@ -43,6 +46,7 @@ public class CustomerDaoImpl implements CustomerDao {
 		return null;
 	}
 
+<<<<<<< HEAD
 
 	@Override
 	public void updateOne(CustomerVo bean) throws SQLException {
@@ -60,4 +64,6 @@ public class CustomerDaoImpl implements CustomerDao {
 
 
 
+=======
+>>>>>>> zero-1
 }

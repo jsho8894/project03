@@ -44,6 +44,14 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
+<<<<<<< HEAD
+=======
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+>>>>>>> zero-1
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
@@ -52,6 +60,14 @@
 			<artifactId>spring-tx</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+<<<<<<< HEAD
+=======
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+>>>>>>> zero-1
 				
 		<!-- AspectJ -->
 		<dependency>
@@ -178,12 +194,15 @@
 		    <artifactId>log4jdbc</artifactId>
 		    <version>1.2</version>
 		</dependency>
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 		<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-dbcp2</artifactId>
 		    <version>2.8.0</version>
 		</dependency>
+=======
+>>>>>>> zero-1
 		
 		
 		    

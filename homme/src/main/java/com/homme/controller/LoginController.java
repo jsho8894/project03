@@ -24,13 +24,22 @@ public class LoginController {
 	@Inject
 	CustomerService service;
 
+<<<<<<< HEAD
 	//È¸¿ø °¡ÀÔ get
+=======
+
+>>>>>>> zero-1
 	@RequestMapping(value="/register",method = RequestMethod.GET)
 	public void getRefister() {
 		logger.info("get register");
 	}
+<<<<<<< HEAD
 	//È¸¿ø°¡ÀÔ post
 		
+=======
+	
+
+>>>>>>> zero-1
 	@RequestMapping(value="/registerresult",method = RequestMethod.POST)
 	public String postRegister(CustomerVo cusvo)  {
 		logger.info("post register");
@@ -62,9 +71,15 @@ public class LoginController {
 		}else {
 			session.setAttribute("customer", login);
 		}
+<<<<<<< HEAD
 		return null;	
 	}
 	//·Î±×¾Æ¿ô
+=======
+		return "redirect:/";	
+	}
+	//ï¿½Î±×¾Æ¿ï¿½
+>>>>>>> zero-1
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) throws SQLException{
 		session.invalidate();
