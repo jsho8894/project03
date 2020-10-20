@@ -48,25 +48,8 @@
 	
 		
 	</style>
-	<script type="text/javascript" 
-	src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" 
-	src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
-	<script type="text/javascript">
-	$(function(){
-		 $('.login').remove();
-	});
-	</script>
 </head>
 <body>
-<!-- Side navigation -->
-<div class="sidenav">
-  <a href="#">Cart</a><br/>
-  <a href="#">My Order</a><br/>
-  <a href="#">Login</a>
-  	/
-  <a href="#">Register</a>
-</div>
 <%@ include file="../template/menu.jspf" %>
 <!-- 옷 이름,가격은 db에서 받아와야 함 -->
 	<h2>&nbsp;&nbsp;T-shirt Page</h2>
@@ -75,7 +58,7 @@
   <li class = "col-md-4">
   	<div class = "tshirtsImg" >
   		<a href = "${bean.tname}">
-  			<img src = "${pageContext.request.contextPath }/resources/tshirtsImgs/${bean.tname }.jpg">
+  			<img src = "${pageContext.request.contextPath }/resources/tshirtImgs/${bean.tname }.jpg">
   		</a>
   	</div>
   		<div class = "tshirtsInfo">

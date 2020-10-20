@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import com.homme.model.entity.HoodyVo;
 

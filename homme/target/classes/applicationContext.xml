@@ -34,5 +34,21 @@
 	<bean id="hommeDao" class="com.homme.model.HommeDaoMybatisImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
 	</bean>
+	
+	<bean id="TshirtDao" class="com.homme.model.TshirtDaoImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
+	</bean>
+	
+	<bean id="ShirtDao" class="com.homme.model.ShirtDaoImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
+	</bean>
+	
+	<bean id="HoodyDao" class="com.homme.model.HoodyDaoImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
+	</bean>
+	
+	<bean id="SweaterDao" class="com.homme.model.SweaterDaoImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
+	</bean>
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>

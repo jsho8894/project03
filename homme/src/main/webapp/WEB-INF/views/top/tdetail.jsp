@@ -110,18 +110,13 @@
 
 		}		
 	</style>	
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			$('.login').remove();
-		});
 								
  $(function(){
  	 	var scount = 1;
  	 	var mcount = 1;
  	 	var lcount = 1;
- 	 	var price = $(".Tprice").val();
+ 	 	var price = $(".Productprice").val();
  	 	var total = 0;
  	 	//total = *(parseInt($(".Sprice").text());
  	 	//클릭시 값이 같이 바뀌어야되고 지워지면 값이 빼져야 함
@@ -237,7 +232,7 @@
 			 	 
 				/* Total price*/
 					$(function(){
-						$('.totprice').text(total);
+						$('.tprice').text(total);
 		});
 	});
 });
@@ -245,22 +240,16 @@
 </head>
 <body>
 	<%@ include file="../template/menu.jspf" %>
-	<h2>&nbsp;&nbsp;Detail Page</h2>
 <!-- Side navigation -->
 <div class="sidenav">
-  <a href="#">CART</a><br/>
-  <a href="#">MY ORDER</a><br/>
-  <a href="#">LOGIN</a>
-  	/
-  <a href="#">REGISTER</a><br/><br/>
-	 <div class = "topTitle" style = "text-align: left; font-size: 17px;" >
+	 <div class = "tshirtTitle" style = "text-align: left; font-size: 17px;" >
 	 	${tdetail.tname }
 	 </div><br/>
-	 <div class = "topPrice" style = "text-align: left; font-size: 12px;" >
+	 <div class = "tshirtPrice" style = "text-align: left; font-size: 12px;" >
 	 	₩ ${tdetail.tprice}
 	 </div><br/>
-	 <div class = "topSize">
-	 <input type="hidden" class="Tprice" value="${tdetail.tprice}"/>
+	 <div class = "tshirtSize">
+	 <input type="hidden" class="Productprice" value="${tdetail.tprice}"/>
 		<select id = "Size" class="form-control" >
 		  	<option value = "" >SIZE</option>
 		  	<option value = "s">S</option>
@@ -272,7 +261,7 @@
 	<table class = "Total_price">
 		<tr>
 			<th>총 상품 금액</th>
-			<td class = "totprice">0원</td>
+			<td class = "tprice">0원</td>
 		</tr>
 
 	</table>

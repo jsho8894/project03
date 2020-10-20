@@ -4,10 +4,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import com.homme.model.entity.ShirtVo;
 
-public class ShritDaoImpl extends SqlSessionDaoSupport implements ShirtDao {
+public class ShirtDaoImpl extends SqlSessionDaoSupport implements ShirtDao {
 
 	@Override
 	public List<ShirtVo> shselectAll() throws SQLException {

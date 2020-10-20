@@ -110,8 +110,6 @@
 
 		}		
 	</style>	
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('.login').remove();
@@ -121,7 +119,7 @@
  	 	var scount = 1;
  	 	var mcount = 1;
  	 	var lcount = 1;
- 	 	var price = $(".Jprice").val();
+ 	 	var price = $(".Productprice").val();
  	 	var total = 0;
  	 	//total = *(parseInt($(".Sprice").text());
  	 	//클릭시 값이 같이 바뀌어야되고 지워지면 값이 빼져야 함

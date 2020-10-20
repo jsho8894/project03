@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/slacks")
 public class SlacksController {
 	
-	@RequestMapping("/")
+	@RequestMapping("/slackslist")
 	public String jean(Model model) throws SQLException {
 		return "pants/slacks";
 	}

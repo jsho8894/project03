@@ -17,14 +17,14 @@ public class ShritController {
 	@Autowired
 	ShirtDao shirtdao;
 
-	@RequestMapping("/")
-	public String tshirt(Model model) throws SQLException {
+	@RequestMapping("/shirtlist")
+	public String shirt(Model model) throws SQLException {
 		model.addAttribute("list", shirtdao.shselectAll());
 		return "top/shirt";
 	}
 
 	
-	  @RequestMapping(value = "/{shname}", method = RequestMethod.GET )
+	  @RequestMapping(value = "shirtlist/{shname}", method = RequestMethod.GET )
 	  public String detail(@PathVariable String shname, Model model) throws SQLException {
 		  model.addAttribute("shdetail", shirtdao.shselectOne(shname));
 		  model.addAttribute("shname", shname);

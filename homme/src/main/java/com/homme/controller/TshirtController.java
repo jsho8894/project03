@@ -18,14 +18,14 @@ public class TshirtController {
 	@Autowired
 	TshirtDao tshirtdao;
 
-	@RequestMapping("/")
+	@RequestMapping("/tshirtlist")
 	public String tshirt(Model model) throws SQLException {
 		model.addAttribute("list", tshirtdao.tselectAll());
 		return "top/tshirt";
 	}
 
 	
-	  @RequestMapping(value = "/{tname}", method = RequestMethod.GET )
+	  @RequestMapping(value = "tshirtlist/{tname}", method = RequestMethod.GET )
 	  public String detail(@PathVariable String tname, Model model) throws SQLException {
 		  model.addAttribute("tdetail", tshirtdao.tselectOne(tname));
 		  model.addAttribute("tname", tname);

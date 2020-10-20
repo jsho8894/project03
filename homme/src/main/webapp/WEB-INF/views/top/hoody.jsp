@@ -48,34 +48,17 @@
 	
 		
 	</style>
-	<script type="text/javascript" 
-	src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" 
-	src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
-	<script type="text/javascript">
-	$(function(){
-		 $('.login').remove();
-	});
-	</script>
 </head>
 <body>
 <!-- Side navigation -->
-<div class="sidenav">
-  <a href="#">Cart</a><br/>
-  <a href="#">My Order</a><br/>
-  <a href="#">Login</a>
-  	/
-  <a href="#">Register</a>
-</div>
 <%@ include file="../template/menu.jspf" %>
 <!-- 옷 이름,가격은 db에서 받아와야 함 -->
-	<h2>&nbsp;&nbsp;Jean Page</h2>
 <ul id = "hoody" class="row">
 <c:forEach items = "${list }" var = "bean">	
   <li class = "col-md-4">
   	<div class = "hoodyImg" >
   		<a href = "${bean.hname}">
-  			<img src = "${pageContext.request.contextPath }/resources/hoodyImgs/${bean.hname }.jpg">
+  			<img src = "${pageContext.request.contextPath }/resources/hoodyimgs/${bean.hname }.jpg">
   		</a>
   	</div>
   		<div class = "HoodyInfo">

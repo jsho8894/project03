@@ -18,14 +18,14 @@ public class HoodyController {
 	@Autowired
 	HoodyDao hoodydao;
 
-	@RequestMapping("/")
-	public String tshirt(Model model) throws SQLException {
+	@RequestMapping("/hoodylist")
+	public String hoody(Model model) throws SQLException {
 		model.addAttribute("list", hoodydao.hselectAll());
 		return "top/hoody";
 	}
 
 	
-	  @RequestMapping(value = "/{hname}", method = RequestMethod.GET )
+	  @RequestMapping(value = "hoodylist/{hname}", method = RequestMethod.GET )
 	  public String detail(@PathVariable String hname, Model model) throws SQLException {
 		  model.addAttribute("hdetail", hoodydao.hselectOne(hname));
 		  model.addAttribute("hname", hname);

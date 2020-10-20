@@ -110,18 +110,12 @@
 
 		}		
 	</style>	
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('.login').remove();
-		});
-								
+	<script type="text/javascript">					
  $(function(){
  	 	var scount = 1;
  	 	var mcount = 1;
  	 	var lcount = 1;
- 	 	var price = $(".Shprice").val();
+ 	 	var price = $(".Productprice").val();
  	 	var total = 0;
  	 	//total = *(parseInt($(".Sprice").text());
  	 	//클릭시 값이 같이 바뀌어야되고 지워지면 값이 빼져야 함
@@ -237,7 +231,7 @@
 			 	 
 				/* Total price*/
 					$(function(){
-						$('.totprice').text(total);
+						$('.tprice').text(total);
 		});
 	});
 });
@@ -245,22 +239,16 @@
 </head>
 <body>
 	<%@ include file="../template/menu.jspf" %>
-	<h2>&nbsp;&nbsp;Detail Page</h2>
 <!-- Side navigation -->
 <div class="sidenav">
-  <a href="#">CART</a><br/>
-  <a href="#">MY ORDER</a><br/>
-  <a href="#">LOGIN</a>
-  	/
-  <a href="#">REGISTER</a><br/><br/>
-	 <div class = "topTitle" style = "text-align: left; font-size: 17px;" >
+	 <div class = "shirtTitle" style = "text-align: left; font-size: 17px;" >
 	 	${shdetail.shname }
 	 </div><br/>
-	 <div class = "topPrice" style = "text-align: left; font-size: 12px;" >
+	 <div class = "shirtPrice" style = "text-align: left; font-size: 12px;" >
 	 	₩ ${shdetail.shprice}
 	 </div><br/>
-	 <div class = "topSize">
-	 <input type="hidden" class="Shprice" value="${shdetail.shprice}"/>
+	 <div class = "shirtSize">
+	 <input type="hidden" class="Productprice" value="${shdetail.shprice}"/>
 		<select id = "Size" class="form-control" >
 		  	<option value = "" >SIZE</option>
 		  	<option value = "s">S</option>
@@ -272,7 +260,7 @@
 	<table class = "Total_price">
 		<tr>
 			<th>총 상품 금액</th>
-			<td class = "totprice">0원</td>
+			<td class = "tprice">0원</td>
 		</tr>
 
 	</table>
@@ -321,7 +309,7 @@
 	  <li class = "col-md-12">
 	   <div class = "shirtImg" >
 	 	 <c:forEach begin="1" end="${shdetail.shcount}" varStatus="st">
-	 	  <img src = "${pageContext.request.contextPath }/resources/shirtImgs/${shname}/${shname}${st.index}.jpg">
+	 	  <img src = "${pageContext.request.contextPath }/resources/shirtimgs/${shname}/${shname}${st.index}.jpg">
 	 	 </c:forEach>
 	   </div>
 	  </li>
