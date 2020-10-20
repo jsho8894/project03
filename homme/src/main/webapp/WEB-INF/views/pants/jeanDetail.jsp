@@ -20,7 +20,6 @@
 			text-align: right;  
 			margin-top : 2px;
 			margin-right: 10px;
-			
 		}
 		
 		li {
@@ -110,8 +109,6 @@
 
 		}		
 	</style>	
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('.login').remove();
@@ -121,13 +118,12 @@
  	 	var scount = 1;
  	 	var mcount = 1;
  	 	var lcount = 1;
- 	 	var price = $(".Jprice").val();
+ 	 	var price = $(".Productprice").val();
  	 	var total = 0;
  	 	//total = *(parseInt($(".Sprice").text());
  	 	//클릭시 값이 같이 바뀌어야되고 지워지면 값이 빼져야 함
  	 		
 		$("#Size").change(function(){	
-			
 			if($("#Size option:selected").val()=='s'){				
 				$(".pantsSize").append("<div class = 'product_option_S'>"+
 						"<div class = 'Ssize'>S</div>"+
@@ -237,7 +233,6 @@
 </head>
 <body>
 	<%@ include file="../template/menu.jspf" %>
-	<h2>&nbsp;&nbsp;Detail Page</h2>
 <!-- Side navigation -->
 <div class="sidenav">
   <a href="#">CART</a><br/>
@@ -252,7 +247,7 @@
 	 	₩ ${detail.jprice}
 	 </div><br/>
 	 <div class = "pantsSize">
-	 <input type="hidden" class="Jprice" value="${detail.jprice}"/>
+	 <input type="hidden" class="Productprice" value="${detail.jprice}"/>
 		<select id = "Size" class="form-control" >
 		  	<option value = "" >SIZE</option>
 		  	<option value = "s">S</option>
@@ -272,42 +267,12 @@
 	<div class ="dropdown">
 		<div class = "detail" > DETAILS <br/>
 			<span class = "detailInfo">
-			• Fabric : Turkey denim <br/>
-			
-			• 100% cotton  / 14oz <br/>
-			
-			• Italy recycling leather <br/>
-			
-			• Metal Parts : made in Japan (YKK/MORITO) <br/><br/>
-			
-			• 고급스럽고 무게감 있는 텍스쳐 <br/>
-			
-			• 빈티지한 블랙 워싱 <br/> 
-			
-			• 탄탄하고 무게감 있는 착용감 <br/>
-			
-			• 친환경 리사이클링 가죽패치 <br/>
-			
-			• 일본산 최고급 금속 버튼과 리벳 <br/><br/>
-			
-			• model size : 180cm / 70kg / 30size <br/><br/>
-			
-			• 수작업 공정 상의 이유로 실측 0.5cm,<br/> 
-			
-			  기장의 경우 1~2cm 차이가 있을 수 있습니다. <br/>
-			
-			• 모니터 및 스마트폰의 사양, 기종에 따라 <br/>
-			
-			  색상이 다소 차이가 있을 수 있습니다. <br/>
-			
-			• 사이즈 측정 방법에 따라 실측의  차이가 <br/>
-			
-			   있을 수 있습니다.
+				${detail.jinfo }
 			</span><br/>
 		</div>
 	</div><br/>
 	<!-- 클릭시 같이 밀려나게... -->
-	<button >BUY NOW</button>
+	<a href = "${pageContext.request.contextPath }/buycheck/"><button>BUY NOW</button></a>
 </div>
 	<ul id = "jeans" class="row">
 	  <li class = "col-md-12">
@@ -316,8 +281,10 @@
 	 	  <img src = "${pageContext.request.contextPath }/resources/jeanImgs/${jname}/${jname}${st.index}.jpg">
 	 	 </c:forEach>
 	   </div>
+	  	<img src = "${pageContext.request.contextPath }/resources/imgs/WashingTip.jpg">
 	  </li>
 	</ul>
+	
 	<%@ include file="../template/footer.jspf" %>
 </body>
 </html>

@@ -14,7 +14,7 @@ public class SlacksDaoMybatisImpl extends SqlSessionDaoSupport implements Slacks
 
 	@Override
 	public SlacksVo selectOne(String sname) throws SQLException {
-		return getSqlSession().selectOne("homme.selectOne",sname);
+		return getSqlSession().selectOne("homme.slselectOne",sname);
 	}
 	
 

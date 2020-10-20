@@ -23,10 +23,10 @@ public class SlacksController {
 		return "pants/slacks";
 	}
 	
-	@RequestMapping(value = "/{sname}", method = RequestMethod.GET )
+	@RequestMapping(value = "/slackslist/{sname}", method = RequestMethod.GET )
 	public String detail(@PathVariable String sname, Model model) throws SQLException {
 		model.addAttribute("detail", slacksDao.selectOne(sname));
 		model.addAttribute("sname", sname);
-		return "pants/slacksdetail"; 
+		return "pants/slacksDetail"; 
 	}
 }

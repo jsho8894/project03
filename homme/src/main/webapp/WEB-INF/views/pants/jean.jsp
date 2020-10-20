@@ -46,10 +46,6 @@
 	
 		
 	</style>
-	<script type="text/javascript" 
-	src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" 
-	src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		 $('.login').remove();
@@ -67,23 +63,22 @@
 </div>
 <%@ include file="../template/menu.jspf" %>
 <!-- 옷 이름,가격은 db에서 받아와야 함 -->
-	<h2>&nbsp;&nbsp;Jean Page</h2>
 <ul id = "jeans" class="row">
 <c:forEach items = "${list }" var = "bean">	
   <li class = "col-md-4">
   	<div class = "jeansImg" >
-  		<a href = "${bean.jname}">
+  		<a href = "${pageContext.request.contextPath }/pants/jeanlist/${bean.jname}">
   			<img src = "${pageContext.request.contextPath }/resources/jeanImgs/${bean.jname }.jpg">
   		</a>
   	</div>
   		<div class = "jeansInfo">
   		  <div class = "name">
-  			<a href = "${bean.jname}">
+  			<a href = "${pageContext.request.contextPath }/pants/jeanlist/${bean.jname}">
 	  			<span>${bean.jname }</span><br/>
   			</a>	
   		  </div>
   		<div class = "price">
-  		 	<a href = "${bean.jname}">
+  		 	<a href = "${pageContext.request.contextPath }/pants/jeanlist/${bean.jname}">
   				<span style="font-size:12px;color:#111111;">&#8361;&nbsp;${bean.jprice }</span>
   			</a>
   		</div>

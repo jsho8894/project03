@@ -27,7 +27,7 @@
 			list-style: none;
 		}
 		
-		#jeans{
+		#slacks{
 			margin : 0px auto;
 			margin-left : 300px;
 		}
@@ -110,8 +110,6 @@
 
 		}		
 	</style>	
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('.login').remove();
@@ -121,10 +119,8 @@
  	 	var scount = 1;
  	 	var mcount = 1;
  	 	var lcount = 1;
- 	 	var price = $(".Jprice").val();
+ 	 	var price = $(".Productprice").val();
  	 	var total = 0;
- 	 	//total = *(parseInt($(".Sprice").text());
- 	 	//클릭시 값이 같이 바뀌어야되고 지워지면 값이 빼져야 함
  	 		
 		$("#Size").change(function(){	
 			
@@ -134,11 +130,11 @@
 							"<div class = 'Scount'>"+scount+"</div>"+
 							"<div class = 'Splus'>+</div>"+
 							"<div class = 'Sminus'>-</div>"+
-							"<div class = 'Sprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Sprice'>"+${detail.sprice}+"</div>"+
 							"<div class = 'Sclose'>x</div>"+
 							"<br/>"+
 						"</div>");
-								
+											
 				total = total + parseInt($(".Sprice").text());
 			}
 								
@@ -148,7 +144,7 @@
 							"<div class = 'Mcount'>"+mcount+"</div>"+
 							"<div class = 'Mplus'>+</div>"+
 							"<div class = 'Mminus'>-</div>"+
-							"<div class = 'Mprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Mprice'>"+${detail.sprice}+"</div>"+
 							"<div class = 'Mclose'>x</div>"+
 							"<br/>"+
 						"</div>");	
@@ -162,7 +158,7 @@
 							"<div class = 'Lcount'>"+lcount+"</div>"+
 							"<div class = 'Lplus'>+</div>"+
 							"<div class = 'Lminus'>-</div>"+
-							"<div class = 'Lprice'>"+${detail.jprice}+"</div>"+
+							"<div class = 'Lprice'>"+${detail.sprice}+"</div>"+
 							"<div class = 'Lclose'>x</div>"+
 							"<br/>"+
 						"</div>");	
@@ -173,6 +169,9 @@
 			/* Size S */			
 		 	 $('.Sclose').click(function(){
 				$('.product_option_S').remove();
+				$('.tprice').text()-parseInt($(".Sprice").text());
+				total = $('.tprice').text()-parseInt($(".Sprice").text());
+				$('.tprice').text();
 				scount = 1;
 			 });
 
@@ -245,7 +244,6 @@
 </head>
 <body>
 	<%@ include file="../template/menu.jspf" %>
-	<h2>&nbsp;&nbsp;Detail Page</h2>
 <!-- Side navigation -->
 <div class="sidenav">
   <a href="#">CART</a><br/>
@@ -254,13 +252,13 @@
   	/
   <a href="#">REGISTER</a><br/><br/>
 	 <div class = "pantsTitle" style = "text-align: left; font-size: 17px;" >
-	 	${detail.jname }
+	 	${detail.sname }
 	 </div><br/>
 	 <div class = "pantsPrice" style = "text-align: left; font-size: 12px;" >
-	 	₩ ${detail.jprice}
+	 	₩ ${detail.sprice}
 	 </div><br/>
 	 <div class = "pantsSize">
-	 <input type="hidden" class="Jprice" value="${detail.jprice}"/>
+	 <input type="hidden" class="Productprice" value="${detail.sprice}"/>
 		<select id = "Size" class="form-control" >
 		  	<option value = "" >SIZE</option>
 		  	<option value = "s">S</option>
@@ -272,7 +270,7 @@
 	<table class = "Total_price">
 		<tr>
 			<th>총 상품 금액</th>
-			<td class = "tprice">0원</td>
+			<td class = "tprice"></td>
 		</tr>
 
 	</table>
@@ -317,13 +315,14 @@
 	<!-- 클릭시 같이 밀려나게... -->
 	<button >BUY NOW</button>
 </div>
-	<ul id = "jeans" class="row">
+	<ul id = "slacks" class="row">
 	  <li class = "col-md-12">
-	   <div class = "jeansImg" >
+	   <div class = "slacksImg" >
 	 	 <c:forEach begin="1" end="${detail.scount}" varStatus="st">
 	 	  <img src = "${pageContext.request.contextPath }/resources/slacksImgs/${sname}/${sname}${st.index}.jpg">
 	 	 </c:forEach>
 	   </div>
+	   	<img src = "${pageContext.request.contextPath }/resources/imgs/WashingTip.jpg">
 	  </li>
 	</ul>
 	<%@ include file="../template/footer.jspf" %>

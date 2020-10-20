@@ -8,4 +8,6 @@ import com.homme.model.entity.SlacksVo;
 public interface SlacksDao {
 	List<SlacksVo> selectAll() throws SQLException;
 	SlacksVo selectOne(String sname) throws SQLException;
+	
+	
 }

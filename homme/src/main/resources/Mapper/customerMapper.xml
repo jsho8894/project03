@@ -6,13 +6,16 @@
 	<insert id="register" parameterType="com.homme.model.entity.CustomerVo">
 		insert into user(user_name,user_id, user_password,user_contact,user_addr,user_email) values(#{user_name},#{user_id},#{user_password},#{user_contact},#{user_addr},#{user_email})
 	</insert>
-	
 	<select id="login" parameterType="com.homme.model.entity.CustomerVo" resultType="com.homme.model.entity.CustomerVo">
 		select * from user where user_id =#{user_id} and user_password=#{user_password}
 	</select>
 	<select id="selectAll" parameterType="com.homme.model.entity.CustomerVo" resultType="com.homme.model.entity.CustomerVo">
-		select * from user
+		select * from user where user_level=2
 	</select>
-
-
+	<update id="updateOne">
+  		update user set user_name=#{user_name},user_password=#{user_password},user_contact=#{user_contact},user_addr=#{user_addr},user_email=#{user_email} where user_id=#{user_id}
+  	</update>
+  	<select id="selectOne" parameterType="com.homme.model.entity.CustomerVo" resultType="com.homme.model.entity.CustomerVo">
+  		select * from user where user_id=#{user_id}
+  	</select>
 </mapper>

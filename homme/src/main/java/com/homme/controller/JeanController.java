@@ -22,12 +22,11 @@ public class JeanController {
 		model.addAttribute("list", JeanDao.selectAll());
 		return "pants/jean";
 	}
-	@RequestMapping(value = "/{jname}", method = RequestMethod.GET )
+	@RequestMapping(value = "/jeanlist/{jname}", method = RequestMethod.GET )
 	public String detail(@PathVariable String jname, Model model) throws SQLException {
 		  model.addAttribute("detail", JeanDao.selectOne(jname));
 		  model.addAttribute("jname", jname);
 		  return "pants/jeanDetail"; 
 	}
 	  	  	 
-
 }
