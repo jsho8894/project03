@@ -14,9 +14,7 @@
 
 <div class="page-header">
 </div>
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %> 
-</div>
+
 <section id="container">
 		<form role="form" method="post" autocomplete="off">
 			<input type="hidden" id="bno" name="bno" value="${readReply.bno}" readonly="readonly" />
@@ -42,7 +40,7 @@
 				// 취소 버튼 클릭
 				$("#cancel_btn").click(function(){			
 					self.location = "/qna/read?bno=${readReply.bno}"
-					+ "&page=${scri.page}"
+					+ "&num=${scri.page}"
 					+ "&perPageNum=${scri.perPageNum}"
 					+ "&searchType=${scri.searchType}"
 					+ "&keyword=${scri.keyword}";

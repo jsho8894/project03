@@ -16,31 +16,32 @@
 <div class="page-header">
 </div>
 
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
 <section id="container">
 	
 		<form role="form" method="post" autocomplete="on">
-			<p>
-				<label for="bno">글 번호</label>
-				<input type="text" id="bno" name="bno" value="${modify.bno}" readonly="readonly" />
-			</p>
-			
-			<p>
-				<label for="title">글 제목</label>
-				<input type="text" id="title" name="title" value="${modify.title}" />
-			</p>
-			<p>
-				<label for="content">글 내용</label>
-				<textarea id="content" name="content" >${modify.content}</textarea>
-			</p>
-			<p>
-				<label for="writer">작성자</label>
-				<input type="text" id="writer" name="writer" value="${modify.writer}" readonly="readonly"/><br />
-				<label>작성 날짜</label>
-				<span><fmt:formatDate value="${modify.regDate}" pattern="yyyy-MM-dd" /></span>
-			</p>
+			<div class="form-group">
+    		<label for="bno" class="col-sm-2 control-label">번호</label>
+    		<div class="col-sm-10">
+      		<input type="text" class="form-control" name="bno" id="bno" value="${modify.bno}" readonly="readonly"/>
+    		</div>
+  			</div>
+  			<div class="form-group">
+   			<label for="writer" class="col-sm-2 control-label">작성자</label>
+    		<div class="col-sm-10">
+      		<input type="text" class="form-control" name="writer" id="writer" value="${modify.writer}" readonly="readonly"/>
+   			</div>
+  			</div>
+  			<div class="form-group">
+    		<label for="title" class="col-sm-2 control-label">제목</label>
+   			<div class="col-sm-10">
+      		<input type="text" class="form-control" name="title" id="title" value="${modify.title}"/>
+    		</div>
+  			</div><div class="form-group">
+    		<label for="content" class="col-sm-2 control-label">내용</label>
+    		<div class="col-sm-10">
+    		<textarea rows="10" cols="50" class="form-control" name="content" id="content" name="content">${modify.content}</textarea>
+    		</div>
+  			</div>
 			<p>
 				<button type="submit">수정</button>
 				<button type="button" id="cancel_btn">취소</button>
@@ -52,7 +53,7 @@
 				// 취소 버튼 클릭
 				$("#cancel_btn").click(function(){			
 self.location = "/qna/read?bno=${modify.bno}"
-			+ "&page=${scri.page}"
+			+ "&num=${scri.page}"
 			+ "&perPageNum=${scri.perPageNum}"
 			+ "&searchType=${scri.searchType}"
 			+ "&keyword=${scri.keyword}";

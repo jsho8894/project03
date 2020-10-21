@@ -23,10 +23,6 @@ $(".repSubmit").click(function(){
 
 <div class="page-header">
 </div>
-
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
 <section>
 	
 		<form  role="form" method="post" autocomplete="off">
@@ -44,6 +40,12 @@ $(".repSubmit").click(function(){
 		
 		</form>
 			
+			<div class="form-group">
+				<label for="writer"class="col-sm-2 control-label">작성자</label>
+				<div class="col-sm-10">
+					<input type="text" id="writer" name="writer" class="form-control" value="${read.writer}" readonly="readonly" />
+				</div>
+			</div>
 			<div class="form-group"> 
 				<label for="title" class="col-sm-2 control-label">글 제목</label>
 				<div class="col-sm-10">
@@ -51,27 +53,13 @@ $(".repSubmit").click(function(){
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="content" class="col-sm-2 control-label">글 내용</label>
-				<div class="col-sm-10">
-					<textarea id="content" name="content" class="form-control" readonly="readonly" >${read.content}</textarea>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="writer"class="col-sm-2 control-label">작성자</label>
-				<div class="col-sm-10">
-					<input type="text" id="writer" name="writer" class="form-control" value="${read.writer}" readonly="readonly" />
-				</div>
-			</div>
-				
-			<div class="form-group">
-				<label class="col-sm-2 control-label">작성 날짜</label>
-				<div class="col-sm-10">
-					<span><fmt:formatDate value="${read.regDate}" pattern="yyyy-MM-dd" /></span>
-				</div>
+				 <label for="content" class="col-sm-2 control-label">내용</label>
+  			 	 <div class="col-sm-10">
+      			 <textarea rows="10" cols="50" class="form-control" name="content" id="content" readonly="readonly">${read.content }</textarea>
+    			 </div>
 			</div>
 			
 			<div class="form-group">
-				<button type="button" id="list_btn" class="btn btn-primary">목록</button>
 				<button type="button" id="modity_btn" class="btn btn-warning">수정</button>
 				<button type="button" id="delete_btn" class="btn btn-danger">삭제</button>
 			
@@ -80,14 +68,6 @@ $(".repSubmit").click(function(){
 				// 폼을 변수에 저장
 				var formObj = $("form[role='form']");
 				
-				// 목록 버튼 클릭
-				$("#list_btn").click(function(){
-					
-					
-					self.location = "/qna/listSearch?"
-							+ "page=${scri.page}&perPageNum=${scri.perPageNum}"
-							+ "&searchType=${scri.searchType}&keyword=${scri.keyword}";					
-				});
 				
 				// 수정 버튼 클릭
 				$("#modity_btn").click(function(){
@@ -121,7 +101,7 @@ $(".repSubmit").click(function(){
 					</p>
 					
 					<p class="bg-info">${repList.content}</p>
-					
+					<c:if test="${customer != null&&customer.user_level==1}">
 					<div class="form-group">													
 						<button type="button" class="replyUpdate btn btn-warning btn-xs" data-rno="${repList.rno}">수정</button>
 						<button type="button" class="replyDelete btn btn-danger btn-xs" data-rno="${repList.rno}">삭제</button>
@@ -140,6 +120,7 @@ $(".repSubmit").click(function(){
 							});							
 						</script>
 					</div>
+					</c:if>
 				</li>
 				</c:forEach>			
 				</ol>
@@ -152,21 +133,23 @@ $(".repSubmit").click(function(){
 			<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}" readonly="readonly" />
 			<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}" readonly="readonly" />
 			<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}" readonly="readonly" />
-		
+			<c:if test="${customer != null&&customer.user_level==1}">
 			<div class="form-group">
 				<label for="writer" class="col-sm-2 control-label">작성자</label>
 				<div class="col-sm-10">
-					<input type="text" id="writer" name="writer" class="form-control" />
+					<input type="text" id="writer" name="writer" class="form-control" value="${customer.user_id }" readonly="readonly"  />
 				</div>
 			</div>			
-			
+			</c:if>
+			<c:if test="${customer != null&&customer.user_level==1}">
 			<div class="form-group">
 				<label for="content" class="col-sm-2 control-label">댓글 내용</label>
 				<div class="col-sm-10">
 					<textarea id="content" name="content" class="form-control" ></textarea>
 				</div>
 			</div>
-			
+			</c:if>
+			<c:if test="${customer != null&&customer.user_level==1}">
 			<div class="form-group">
 				 <div class="col-sm-offset-2 col-sm-10"> 
 					<button type="button" class="repSubmit btn btn-success">작성</button> 
@@ -180,6 +163,7 @@ $(".repSubmit").click(function(){
 				});				
 				</script>				
 			</div>
+			</c:if>
 		</form>		
 		</section>
 			

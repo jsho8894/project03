@@ -48,33 +48,33 @@ public class BoardServiceImpl implements BoardService {
 		return dao.list();
 	}
  
-	// 목록 + 페이징
+	
+	// 게시물 총 갯수
 	@Override
-	public List<BoardVO> listPage(Criteria cri) throws Exception {
-		return dao.listPage(cri);
+	public int count() throws Exception {
+		return dao.count();
 	}
 
-	// 게시물 총 갯수 
+	
+	
+	// 게시물 목록 + 페이징
 	@Override
-	public int listCount() throws Exception {
-		return dao.listCount();
+	public List<BoardVO> listPage(int displayPost, int postNum) throws Exception {
+		return dao.listPage(displayPost, postNum);
 	}
 
-	// 목록 + 페이징 + 검색
+	
+	
+	// 게시물 목록 + 페이징 + 검색
 	@Override
-	public List<BoardVO> listSearch(SearchCriteria scri) throws Exception {
-		return dao.listSearch(scri);
+	public List<BoardVO> listPageSearch(
+			int displayPost, int postNum, String searchType, String keyword) throws Exception {
+		return  dao.listPageSearch(displayPost, postNum, searchType, keyword);
 	}
-
-	// 검색 결과 갯수
+	
+	// 게시물 총 갯수
 	@Override
-	public int countSearch(SearchCriteria scri) throws Exception {
-		return dao.countSearch(scri);
+	public int searchCount(String searchType, String keyword) throws Exception {
+		return dao.searchCount(searchType, keyword);
 	}
-
-	@Override
-	public List<ReplyVO> readReply(int bno) throws Exception {
-		return dao.readReply(bno);
-	}
- 
 }

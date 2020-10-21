@@ -16,23 +16,28 @@
 <div class="page-header">
 </div>
 
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
 <section id="container">
 	
 	<c:if test="${msg == null}">
 		<form role="form" method="post" autocomplete="off">
-			<p>
-				<label for="title">글 제목</label><input type="text" id="title" name="title" />
-			</p>
-			<p>
-				<label for="content">글 내용</label><textarea id="content" name="content"></textarea>
-			</p>
-			<p>
-				<label for="writer">작성자</label>
-				<input type="text" id="writer" name="writer" value="" readonly="readonly" />	
-			</p>
+			 <div class="form-group">
+   		 <label for="title" class="col-sm-2 control-label">제 목</label>
+   		 <div class="col-sm-10">
+    	  <input type="text" class="form-control" name="title" id="title" />
+	    </div>
+	 	 </div>
+	   <div class="form-group">
+	    <label for="user_id" class="col-sm-2 control-label">작성자</label>
+	    <div class="col-sm-10">
+	       <input type="text" class="form-control" name="writer" id="writer" value="${customer.user_id }"readonly="readonly"/>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="content" class="col-sm-2 control-label">내 용</label>
+	    <div class="col-sm-10">
+	      <textarea rows="10" cols="50" class="form-control" name="content" id="content" name="content" placeholder="content"></textarea>
+	    </div>
+  </div>
 			<p> 
 				<button type="submit">작성</button>
 			</p>		

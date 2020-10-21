@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.homme.model.entity.BoardVO;
-import com.homme.model.entity.Criteria;
-import com.homme.model.entity.PageMaker;
+import com.homme.model.entity.Page;
 import com.homme.model.entity.ReplyVO;
 import com.homme.model.entity.SearchCriteria;
 import com.homme.service.BoardService;
@@ -110,7 +109,7 @@ public class BoardController {
 			
 			service.update(vo);
 				
-			rttr.addAttribute("page", scri.getPage());
+			rttr.addAttribute("num", scri.getPage());
 			rttr.addAttribute("perPageNum", scri.getPerPageNum());
 			rttr.addAttribute("searchType", scri.getSearchType());
 			rttr.addAttribute("keyword", scri.getKeyword());
@@ -126,7 +125,7 @@ public class BoardController {
 					
 			service.delete(bno);
 			
-			rttr.addAttribute("page", scri.getPage());
+			rttr.addAttribute("num", scri.getPage());
 			rttr.addAttribute("perPageNum", scri.getPerPageNum());
 			rttr.addAttribute("searchType", scri.getSearchType());
 			rttr.addAttribute("keyword", scri.getKeyword());
@@ -134,32 +133,118 @@ public class BoardController {
 			return "redirect:/qna/listSearch";	
 		}	
 		
-		// 글 목록 + 페이징
+		// 게시물 목록 + 페이징 추가
 		@RequestMapping(value = "/listPage", method = RequestMethod.GET)
-		public void listPage(@ModelAttribute("cri") Criteria cri, Model model) throws Exception {
+		public void getListPage(Model model, @RequestParam("num") int num) throws Exception {
+
+			
+			Page page = new Page();
+			
+			page.setNum(num);
+			page.setCount(service.count());		
+			
+			List<BoardVO> list = null; 
+			list = service.listPage(page.getDisplayPost(), page.getPostNum());
+			
+			model.addAttribute("list", list);
+			
+			/*
+			model.addAttribute("pageNum", page.getPageNum());
+			
+			model.addAttribute("startPageNum", page.getStartPageNum());
+			model.addAttribute("endPageNum", page.getEndPageNum());
+			 
+			model.addAttribute("prev", page.getPrev());
+			model.addAttribute("next", page.getNext());
+			*/
+			
+			model.addAttribute("page", page);
+			
+			model.addAttribute("select", num);
+			
+			/*
+			// 게시물 총 갯수
+			int count = service.count();
+			
+			// 한 페이지에 출력할 게시물 갯수
+			int postNum = 10;
+			
+			// 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
+			int pageNum = (int)Math.ceil((double)count/postNum);
+			
+			// 출력할 게시물
+			int displayPost = (num - 1) * postNum;
+						
+			
+			// 한번에 표시할 페이징 번호의 갯수
+			int pageNum_cnt = 10;
+			
+			// 표시되는 페이지 번호 중 마지막 번호
+			int endPageNum = (int)(Math.ceil((double)num / (double)pageNum_cnt) * pageNum_cnt);
+			
+			// 표시되는 페이지 번호 중 첫번째 번호
+			int startPageNum = endPageNum - (pageNum_cnt - 1);
+			// 마지막 번호 재계산
+			int endPageNum_tmp = (int)(Math.ceil((double)count / (double)pageNum_cnt));
 				
-			List<BoardVO> list = service.listPage(cri);
-			model.addAttribute("list", list);
+			if(endPageNum > endPageNum_tmp) {
+				endPageNum = endPageNum_tmp;
+			}
 			
-			PageMaker pageMaker = new PageMaker();
-			pageMaker.setCri(cri);
-			pageMaker.setTotalCount(service.listCount());
-			model.addAttribute("pageMaker", pageMaker);
+			boolean prev = startPageNum == 1 ? false : true; 
+			boolean next = endPageNum * pageNum_cnt >= count ? false : true;
 			
+			List<BoardVO> list = null; 
+			list = service.listPage(displayPost, postNum);
+			model.addAttribute("list", list);		 
+			model.addAttribute("pageNum", pageNum);
+			
+			// 시작 및 끝 번호
+			model.addAttribute("startPageNum", startPageNum);
+			model.addAttribute("endPageNum", endPageNum);
+			// 이전 및 다음 
+			model.addAttribute("prev", prev);
+			model.addAttribute("next", next);		 
+			
+			// 현재 페이지
+			model.addAttribute("select", num);
+			*/
 		}
+
+
 		
-		
-		// 글 목록 + 페이징 + 검색
+		// 게시물 목록 + 페이징 추가 + 검색
 		@RequestMapping(value = "/listSearch", method = RequestMethod.GET)
-		public void listSearch(@ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception {
+		public void getListPageSearch(Model model, @RequestParam("num") int num, 
+				@RequestParam(value = "searchType",required = false, defaultValue = "title") String searchType,
+				@RequestParam(value = "keyword",required = false, defaultValue = "") String keyword
+				) throws Exception {
+		
 			
-			List<BoardVO> list = service.listSearch(scri);
+			Page page = new Page();
+			
+			page.setNum(num);
+			//page.setCount(service.count());		
+			page.setCount(service.searchCount(searchType, keyword));
+			
+			// 검색 타입과 검색어
+			//page.setSearchTypeKeyword(searchType, keyword);
+			page.setSearchType(searchType);
+			page.setKeyword(keyword);
+					
+			List<BoardVO> list = null; 
+			//list = service.listPage(page.getDisplayPost(), page.getPostNum());
+			list = service.listPageSearch(page.getDisplayPost(), page.getPostNum(), searchType, keyword);
+			
 			model.addAttribute("list", list);
+			model.addAttribute("num", page);
+			model.addAttribute("select", num);
 			
-			PageMaker pageMaker = new PageMaker();
-			pageMaker.setCri(scri);
-			pageMaker.setTotalCount(service.listCount());
-			model.addAttribute("pageMaker", pageMaker);
+			//model.addAttribute("searchType", searchType);
+			//model.addAttribute("keyword", keyword);
+			
+			
+			
 		}
 		
 		// 댓글 작성

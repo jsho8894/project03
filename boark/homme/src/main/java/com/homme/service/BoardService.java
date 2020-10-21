@@ -24,19 +24,22 @@ public interface BoardService {
 		// 목록
 		public List<BoardVO> list() throws Exception;
 
-		// 목록 + 페이징
-		public List<BoardVO> listPage(Criteria cri) throws Exception;
 
 		// 게시물 총 갯수
-		public int listCount() throws Exception;
+		public int count() throws Exception;
 
-		// 목록 + 페이징 + 검색
-		public List<BoardVO> listSearch(SearchCriteria scri) throws Exception;
-			
-		// 검색 결과 갯수
-		public int countSearch(SearchCriteria scri) throws Exception;
 		
-		// 댓글 조회
-		public List<ReplyVO> readReply(int bno) throws Exception;
+		
+		// 게시물 목록 + 페이징
+		public List<BoardVO> listPage(int displayPost, int postNum) throws Exception;
+		
+		
+		
+		// 게시물 목록 + 페이징 + 검색
+		public List<BoardVO> listPageSearch(
+				int displayPost, int postNum, String searchType, String keyword) throws Exception;
+		
+		// 게시물 총 갯수 + 검색 적용
+		public int searchCount(String searchType, String keyword) throws Exception;
 	
 }

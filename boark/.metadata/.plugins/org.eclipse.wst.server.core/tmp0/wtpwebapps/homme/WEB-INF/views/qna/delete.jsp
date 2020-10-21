@@ -17,9 +17,6 @@
 
 <div class="page-header">
 </div>
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %> 
-</div>
 <section id="container">
 		<form role="form" method="post" autocomplete="off">
 			<p>

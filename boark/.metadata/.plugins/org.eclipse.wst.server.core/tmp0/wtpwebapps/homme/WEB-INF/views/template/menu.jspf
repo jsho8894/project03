@@ -64,7 +64,7 @@
             <li><a href="${pageContext.request.contextPath }/outerc/">CARDIGAN</a></li>
           </ul>
         </li>
-        <li><a href="${pageContext.request.contextPath }/qna/list">QnA</a></li>
+        <li><a href="${pageContext.request.contextPath }/qna/listSearch?num=1">QnA</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
