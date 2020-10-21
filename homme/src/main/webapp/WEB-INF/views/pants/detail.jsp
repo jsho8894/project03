@@ -140,7 +140,7 @@
 				total = total + parseInt($(".Sprice").text());
 			}
 			
-								
+			
 			if($("#Size option:selected").val()=='m'){
 				$(".pantsSize").append("<div class = 'product_option_M'>"+
 						"<div class = 'Msize'>M</div>"+

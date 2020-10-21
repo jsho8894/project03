@@ -8,43 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class HommeController {
 	
-	@RequestMapping("/tshirt")
-	public String TshirtList() {
-		return "tshirt";
+	@RequestMapping("/buycheck")
+	public String buycheckList() {
+		return "buycheck";
 	}
-	@RequestMapping("/shirt")
-	public String shirtList() {
-		return "shirt";
-	}
-	@RequestMapping("/hoody")
-	public String hoodyList() {
-		return "hoody";
-	}
-	@RequestMapping("/sweater")
-	public String sweaterList() {
-		return "sweater";
+	@RequestMapping("/index")
+	public String index() {
+		return "index";
 	}
 
-	@RequestMapping("/coat")
-	public String CoattList() {
-		return "coat";
-	}
-	@RequestMapping("/jacket")
-	public String JacketList() {
-		return "jacket";
-	}
-	@RequestMapping("/outerc")
-	public String OtercList() {
-		return "outerc";
-	}
-	@RequestMapping("/best")
-	public String BestList() {
-		return "best";
-	}
-	@RequestMapping("/sale")
-	public String SaleList() {
-		return "sale";
-	}
 
 
 }
