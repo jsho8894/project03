@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="homme">
-  <select id ="selectAll" resultType="com.homme.model.entity.HommeVo">
+  <select id ="selectAll" resultType="com.homme.model.entity.JeanVo">
     select * from jean order by jnum asc
   </select>
-  <select id ="selectOne" resultType="com.homme.model.entity.HommeVo">
+  <select id ="selectOne" resultType="com.homme.model.entity.JeanVo">
   	select * from jean where jname = #{jname}
+  </select>
+  <select id ="slselectAll" resultType="com.homme.model.entity.SlacksVo">
+    select * from slacks order by snum asc
+  </select>
+  <select id ="slselectOne" resultType="com.homme.model.entity.SlacksVo">
+  	select * from slacks where sname = #{sname}
   </select>
   
    <select id ="tselectAll" resultType="com.homme.model.entity.TshirtVo">

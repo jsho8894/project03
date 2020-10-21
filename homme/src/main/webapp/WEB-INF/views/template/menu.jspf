@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>    
 <form name='homeForm' method="post" action="/login">
 			<div class="login">
 				<c:if test="${customer != null&&customer.user_level==2}">
@@ -18,7 +16,7 @@
 				<p><a href="${pageContext.request.contextPath }/register">&nbsp;&nbsp;&nbsp;회원가입</a></p>
 				</c:if>
 			</div>
-	</form>
+</form>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -52,8 +50,8 @@
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PANTS<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="${pageContext.request.contextPath }/pants/">JEAN</a></li>
-            <li><a href="${pageContext.request.contextPath }/pants/">SLACKS</a></li>
+            <li><a href="${pageContext.request.contextPath }/pants/jeanlist">JEAN</a></li>
+            <li><a href="${pageContext.request.contextPath }/pants/slackslist">SLACKS</a></li>
           </ul>
           </li>
           <li class="dropdown">

@@ -45,8 +45,7 @@
 		#jeans {
 			margin-left : 100px;
 		}
-	
-		
+			
 	</style>
 	<script type="text/javascript" 
 	src="${pageContext.request.contextPath }/resources/js/jquery-1.12.4.min.js"></script>
@@ -56,7 +55,6 @@
 	$(function(){
 		 $('.login').remove();
 	});
-	
 	
 	</script>
 </head>

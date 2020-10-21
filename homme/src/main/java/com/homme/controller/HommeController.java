@@ -12,12 +12,4 @@ public class HommeController {
 	public String buycheckList() {
 		return "buycheck";
 	}
-	@RequestMapping("/index")
-	public String index() {
-		return "index";
-	}
-
-
-
 }
-
