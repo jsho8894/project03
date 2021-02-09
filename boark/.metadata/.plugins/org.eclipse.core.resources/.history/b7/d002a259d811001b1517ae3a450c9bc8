@@ -1,0 +1,5 @@
+package com.homme.model;
+
+public class BoardDAOImpl {
+
+}

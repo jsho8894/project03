@@ -1,0 +1,24 @@
+package com.homme.controller;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.homme.service.ReplyService;
+
+@Controller
+@RequestMapping("/reply/*")
+public class ReplyController {
+
+	@Inject
+	private ReplyService replyService;
+	
+	// ´ñ±Û Á¶È¸
+	
+	// ´ñ±Û ÀÛ¼º
+	
+	// ´ñ±Û ¼öÁ¤
+	
+	// ´ñ±Û »èÁ¦
+	

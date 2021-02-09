@@ -1,0 +1,20 @@
+package com.homme.model;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.homme.model.entity.BoardVO;
+
+
+public interface BoardDAO {
+
+	List<BoardVO> selectAll() throws SQLException;
+	int selectTot() throws SQLException;
+	BoardVO selectOne(int bno) throws SQLException;
+	void insertOne(BoardVO bean) throws SQLException;
+	void updateOne(BoardVO bean) throws SQLException;
+	void deleteOne(int bno) throws SQLException;
+	
+}

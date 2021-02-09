@@ -1,0 +1,54 @@
+<%@ page language="java" pageEncoding="utf-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Home</title>
+	<meta charset="utf-8">
+<%@ include file="template/header.jspf" %>
+      <style type="text/css">
+      .item > img {
+         margin: 0px auto;
+      }
+      .item > img{
+         height: 650px;
+         width: 335px;
+      }
+   </style>
+</head>
+<body>
+<%@ include file="template/menu.jspf" %>
+
+<!-- content start -->
+<table>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성일</th>
+			<th>작성자</th>
+			<th>조회수</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+	
+		<c:forEach items="${list}" var="list">
+			<tr>
+				<td>${list.bno}</td>
+				<td>
+					<a href="/board/view?bno=${list.bno}">${list.title}</a>
+				</td>
+				<td>
+					<fmt:formatDate value="${list.regDate}" pattern="yyyy-MM-dd" />				
+				</td>
+				<td>${list.writer}</td>
+				<td>${list.viewCnt}</td>
+			</tr>
+		</c:forEach>
+	
+	</tbody>
+
+</table>
+<%@ include file="template/footer.jspf" %>
+</body>
+</html>
